@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    iframe {
+        border: 1px solid black;
+        height: 100vh;
+        padding: 20px;
+        margin:10px;
+        width: 100%;
+        border-radius:5px;
+    }
+
+
+    textarea {
+        padding: 10px;
+        resize:none;
+        outline-color: black;
+        width: 100%;
+        border-radius: 5px;
+        font-family: "Fira Mono", monospace;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+
+    .editWrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 20px;
+        justify-content: space-around;
+    }
+
+    .playgroundWrapper {
+        display: flex;
+        flex-direction:column;
+        /* margin-block-start: 2em; */
+        margin: 0 auto;
+    }
+
+
+    .title::after {
+        content: '</>';
+        width:100%;
+        margin: 5px;
+        transition: ease-in;
+    }
+
+    .title,.subtitle {
+        margin: 10px;
+    }
+
+    .previewWrapper {
+        position:relative;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .previewWrapper::before {
+        content:'output';
+        position: absolute;
+        top:0;
+        left:0;
+        margin: 10px 10px;
+        border-right: 1px solid rgb(0, 0, 0);
+        border-bottom: 1px solid rgb(0, 0, 0);
+        padding: 5px;
+        border-radius: 5px;
+    
+
+    }
+
+</style>
+
+<body>
+    <marquee direction="right">CS306 - Web Programming</marquee>
+    <h1 class="title"> HTML and CSS Playground</h1>
+    <p class="subtitle">Playground is created for quick prototyping, and should be sufficient to test your skills.</p>
+    <hr>
+    <div class="playgroundWrapper">
+        <div class="editWrapper">
+            <textarea name="htmlEdit" id="htmlEdit" cols="30" rows="10" placeholder="your HTML here"></textarea>
+            <textarea name="cssEdit" id="cssEdit" cols="30" rows="10" placeholder="your CSS here"></textarea>
+        </div>
+        <div class="previewWrapper">
+            <iframe id="previewFrame"></iframe>
+        </div>
+    </div>
+
+</body>
+<script>
+    let htmlEditEl = document.querySelector('#htmlEdit')
+    let cssEditEl = document.querySelector('#cssEdit')
+    let previewEl = document.querySelector('#previewFrame')
+    let previewElDocument = previewEl.contentWindow.document
+
+    previewElDocument.head.appendChild(previewElDocument.createElement('style'))
+
+    function preview() {
+        htmlEditEl.addEventListener('change', () => {
+            previewElDocument.querySelector('body').innerHTML = htmlEditEl.value
+        })
+
+        cssEditEl.addEventListener('change', () => {
+            previewElDocument.querySelector('style').innerText = cssEditEl.value
+        })
+    }
+
+    preview();
+</script>
+
+</html>
