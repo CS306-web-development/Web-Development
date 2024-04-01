@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.backgroundBorderWrapper {
+  h1 {
+    color: white;
+    background-color: black;
+    border: 3px solid crimson;
+  }
+}
+
+.textWrapper {
+  h1 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  h1 + p {
+    border-inline-start: 5px solid purple;
+    padding: 10px;
+    font-family: "DM Sans", sans-serif;
+    line-height: 25px;
+    font-weight: light;
+    word-spacing: 10px;
+    text-align: justify;
+  }
+
+  & .styled-text {
+    text-decoration: underline red wavy;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .arabic-text {
+    direction: rtl;
+    padding: 10px;
+    border-inline-start: 5px solid green;
+  }
+}
+
+.listWrapper {
+  ul > li {
+    list-style-image: url("../../assets/todo.svg");
+    list-style-position: inside;
+  }
+  ol {
+    list-style-type: lower-roman;
+  }
+}
+
+.tableWrapper {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+  }
+  table caption {
+    caption-side: bottom;
+    margin-top: 5px;
+    font-style: italic;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+  thead,
+  tfoot {
+    background-color: black;
+    color: white;
+    border-color: white;
+  }
+}
+
+.imageWrapper {
+    .img-container {
+        width:300px;
+        margin: auto;
+    }
+    img {
+        max-width: 100%;
+        object-fit:cover;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        filter:grayscale(100%)
+    }
+}
+
+.linkWrapper {
+    ul {
+        list-style-type: none;
+    }
+    a {
+        text-decoration: none;
+        outline-color: transparent;
+        text-transform: uppercase;
+    }
+
+    a:link {
+        color:black;
+    }
+
+    a:visited {
+        color:blue;
+    }
+
+    a:focus {
+        color:purple;
+
+    }
+
+    a:hover {
+        text-decoration: underline red;
+        cursor:pointer;
+    }
+
+    a:active {
+        font-weight: bold;
+    }
+}

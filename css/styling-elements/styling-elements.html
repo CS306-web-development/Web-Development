@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Applying stylesheets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .page h1 {
+        color: lightblue;
+    }
+</style>
+
+<body>
+    <marquee direction="right">CS306 - Web Programming: CSS</marquee>
+    <h1>2. Styling Elements</h1> <span><a href="../../index.html">Go to homepage</a></span>
+    <hr>
+    <p><em>Outline:</em></p>
+    <ol>
+        <li><a href="#background">Background and borders</a></li>
+        <li><a href="#text">Styling text</a></li>
+        <li><a href="#lists">Styling lists</a></li>
+        <li><a href="#tables">Styling tables</a></li>
+        <li><a href="#images">Styling images</a></li>
+        <li><a href="#links">Styling links</a></li>
+
+
+    </ol>
+    <hr>
+
+    <h2 id="background">2.1. Background and borders</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+&lt;h1&gt;This text background is black&lt;&#x2F;h1&gt;
+
+                </pre>
+            </td>
+            <td>
+                <pre>
+            h1 {
+                color:white;
+                background-color: black;
+                border: 3px solid crimson;
+            }
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <p><strong>Output:</strong></p>
+    <div class="backgroundBorderWrapper">
+
+        <h1>This text background is black</h1>
+    </div>
+
+    <h2 id="text">2.2. Styling Text</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre style="text-wrap: balance;">
+    &lt;h1&gt;Main header&lt;&#x2F;h1&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit, &lt;span class&#x3D;&quot;styled-text&quot;&gt;amet consectetur adipisicing elit.&lt;&#x2F;span&gt; Hic qui deleniti quos error tenetur ab, porro cupiditate dignissimos velit, harum a molestiae iure quia voluptas maxime fuga itaque, minima at? Nihil aspernatur rerum eos repellendus ullam provident blanditiis, natus, aliquam nemo nesciunt illo dolorem est ducimus, cupiditate inventore voluptatibus eum harum facere vero cumque porro. Alias nostrum est necessitatibus maxime.&lt;&#x2F;p&gt;
+
+    &lt;p class&#x3D;&quot;arabic-text&quot;&gt;لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.&lt;&#x2F;p&gt;
+                </pre>
+            </td>
+            <td style="width:50%;">
+                <pre>
+                    h1 {
+                        font-family: "DM Sans", sans-serif;
+                        font-size: 2.5em;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                    }
+                
+                    h1 + p {
+                        border-inline-start: 5px solid purple;
+                        padding: 10px;
+                        font-family: "DM Sans", sans-serif;
+                        line-height: 25px;
+                        font-weight: light;
+                        word-spacing: 10px;
+                        text-align: justify;
+                    }
+                
+                     .styled-text {
+                        text-decoration: underline red wavy;
+                        font-style: italic;
+                        font-weight: bold;
+                    }
+                
+                    .arabic-text {
+                        direction: rtl;
+                        padding: 10px;
+                        border-inline-start: 5px solid green;
+                    }
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <p><strong>Output:</strong></p>
+    <div class="textWrapper">
+        <h1>Main header</h1>
+        <p>Lorem ipsum dolor sit, <span class="styled-text">amet consectetur adipisicing elit.</span> Hic qui deleniti quos error tenetur ab, porro cupiditate dignissimos velit, harum a molestiae iure quia voluptas maxime fuga itaque, minima at?
+        Nihil aspernatur rerum eos repellendus ullam provident blanditiis, natus, aliquam nemo nesciunt illo dolorem est ducimus, cupiditate inventore voluptatibus eum harum facere vero cumque porro. Alias nostrum est necessitatibus maxime.</p>
+        <p class="arabic-text">لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.</p>
+    </div>
+
+    <h2 id="lists">2.3. Styling Lists</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+&lt;p&gt; My Todo List &lt;&#x2F;p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Prepare breakfast&lt;&#x2F;li&gt;
+    &lt;ol&gt;
+        &lt;li&gt;English&lt;&#x2F;li&gt;
+        &lt;li&gt;Oriental&lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;li&gt;Walk the dog&lt;&#x2F;li&gt;
+    &lt;li&gt;Go to work&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+                
+                </pre>
+            </td>
+            <td>
+                <pre>
+                    ul > li {
+                        list-style-image: url("../../assets/todo.svg");
+                        list-style-position: inside;
+                      }
+                      ol {
+                        list-style-type: lower-roman;
+                      }
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <p><strong>Output:</strong></p>
+    <div class="listWrapper">
+        <p>
+            My Todo List
+        </p>
+       <ul>
+        <li>Prepare breakfast</li>
+        <ol>
+        <li>English</li>
+        <li>Oriental</li>
+        </ol>
+        <li>Walk the dog</li>
+        <li>Go to work</li>
+       </ul>
+        
+    </div>
+
+    <h2 id="tables">2.4. Styling Tables</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+&lt;table class&#x3D;&quot;tableExample&quot; border&#x3D;&quot;1&quot;&gt;
+    &lt;caption&gt;Table 1. Employees Data&lt;&#x2F;caption&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+    &lt;th&gt;#&lt;&#x2F;th&gt;
+    &lt;th&gt;Employee Code&lt;&#x2F;th&gt;
+    &lt;th&gt;Employee Name&lt;&#x2F;th&gt;
+    &lt;th&gt;Age&lt;&#x2F;th&gt;
+    &lt;th&gt;Gender&lt;&#x2F;th&gt;
+    &lt;th&gt;Dept.&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+    &lt;&#x2F;thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1&lt;&#x2F;td&gt;
+        &lt;td&gt;12345&lt;&#x2F;td&gt;
+        &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+        &lt;td&gt;32&lt;&#x2F;td&gt;
+        &lt;td&gt;M&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;2&lt;&#x2F;td&gt;
+        &lt;td&gt;12346&lt;&#x2F;td&gt;
+        &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+        &lt;td&gt;29&lt;&#x2F;td&gt;
+        &lt;td&gt;F&lt;&#x2F;td&gt;
+        &lt;td&gt;Sales&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;3&lt;&#x2F;td&gt;
+        &lt;td&gt;12347&lt;&#x2F;td&gt;
+        &lt;td&gt;Sara Williams&lt;&#x2F;td&gt;
+        &lt;td&gt;30&lt;&#x2F;td&gt;
+        &lt;td&gt;F&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+
+    &lt;&#x2F;tbody&gt;
+    &lt;tfoot&gt;
+    &lt;td&gt;Total Employees&lt;&#x2F;td&gt;
+    &lt;td colspan&#x3D;&quot;5&quot;&gt;3&lt;&#x2F;td&gt;
+    &lt;&#x2F;tfoot&gt;
+&lt;&#x2F;table&gt;
+                
+                </pre>
+            </td>
+            <td>
+            <pre>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed;
+            text-align: center;
+            }
+            table caption {
+            caption-side: bottom;
+            margin-top: 5px;
+            font-style: italic;
+            }
+        
+            th,td {
+            padding: 10px;
+            }
+            thead,
+            tfoot {
+            background-color: black;
+            color: white;
+            border-color: white;
+            }
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <p><strong>Output:</strong></p>
+    <div class="tableWrapper">
+        <table class="tableExample" border="1">
+            <caption>Table 1. Employees Data</caption>
+          <thead>
+            <tr>
+            <th>#</th>
+            <th>Employee Code</th>
+            <th>Employee Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Dept.</th>
+        </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>1</td>
+                <td>12345</td>
+                <td>John Doe</td>
+                <td>32</td>
+                <td>M</td>
+                <td>IT</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>12346</td>
+                <td>Sam Smith</td>
+                <td>29</td>
+                <td>F</td>
+                <td>Sales</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>12347</td>
+                <td>Sara Williams</td>
+                <td>30</td>
+                <td>F</td>
+                <td>IT</td>
+            </tr>
+
+          </tbody>
+          <tfoot>
+            <td>Total Employees</td>
+            <td colspan="5">3</td>
+          </tfoot>
+        </table>
+
+    </div>
+
+
+    <h2 id="images">2.5. Styling Images</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre style="text-wrap:balance">
+    &lt;div class&#x3D;&quot;img-container&quot;&gt;
+    &lt;img class&#x3D;&quot;imgExample&quot; src&#x3D;&quot;..&#x2F;..&#x2F;assets&#x2F;cat.jpeg&quot; alt&#x3D;&quot;image of a cat&quot;&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p&gt;Cats&lt;&#x2F;p&gt;
+    &lt;p&gt;The cat (Felis catus), commonly referred to as the domestic cat or house cat, is the only domesticated species in the family Felidae. Recent advances in archaeology and genetics have shown that the domestication of the cat occurred in the Near East around 7500 BC. &lt;&#x2F;p&gt;
+                
+                </pre>
+            </td>
+            <td style="width:50%;">
+                <pre>
+        .img-container {
+            width:300px;
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+            object-fit:cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            filter:grayscale(100%)
+        }
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <p><strong>Output:</strong></p>
+    <div class="imageWrapper">
+        <div class="img-container"><img class="imgExample" src="../../assets/cat.jpeg" alt="image of a cat">
+        </div>
+        <p>Cats</p>
+        <p>The cat (Felis catus), commonly referred to as the domestic cat or house cat, is the only domesticated species in the family Felidae. Recent advances in archaeology and genetics have shown that the domestication of the cat occurred in the Near East around 7500 BC. </p>
+        
+    </div>
+
+    <h2 id="links">2.6. Styling Links</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;#services&quot;&gt;Services&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;#pricing&quot;&gt;Pricing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;#gallery&quot;&gt;Gallery&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;#about&quot;&gt;About us&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+                
+                </pre>
+            </td>
+            <td>
+                <pre>
+    ul {
+        list-style-type: none;
+    }
+    a {
+        text-decoration: none;
+        outline-color: transparent;
+        text-transform: uppercase;
+    }
+
+    a:link {
+        color:black;
+    }
+
+    a:visited {
+        color:blue;
+    }
+
+    a:focus {
+        color:purple;
+
+    }
+
+    a:hover {
+        text-decoration: underline red;
+        cursor:pointer;
+    }
+
+    a:active {
+        font-weight: bold;
+    }
+            </pre>
+            </td>
+        </tr>
+    </table>
+    <p><strong>Output:</strong></p>
+    <div class="linkWrapper">
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About us</a></li>
+        </ul>
+    <div id="services"></div>
+    <div id="pricing"></div>
+    <div id="gallery"></div>
+    <div id="about"></div>
+    </div>
+
+
+    
+</body>
+
+</html>

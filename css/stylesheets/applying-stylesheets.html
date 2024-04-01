@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Applying stylesheets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .page h1 {
+        color: lightblue;
+    }
+</style>
+
+<body>
+    <marquee direction="right">CS306 - Web Programming: CSS</marquee>
+    <h1>1. Applying Stylesheets</h1> <span><a href="../../index.html">Go to homepage</a></span>
+    <hr>
+    <p><em>Outline:</em></p>
+    <ol>
+        <li><a href="#inline">Inline styling</a></li>
+        <li><a href="#internal">Internal styling</a></li>
+        <li><a href="#external">External stylesheets</a></li>
+        <li><a href="#cascading">Cascading stylesheets</a></li>
+    </ol>
+    <hr>
+
+    <h2 id="inline">1.1. Inline styling</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+     &lt;h1 style&#x3D;&quot;color:purple&quot;&gt;CSS is awesome&lt;&#x2F;h1&gt;
+        </pre>
+    <p><strong>Output:</strong></p>
+    <h1 style="color:purple">CSS is awesome</h1>
+
+    <h2 id="internal">1.2. Internal styling</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang&#x3D;&quot;en&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
+                &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
+                &lt;title&gt;My website&lt;&#x2F;title&gt;
+            &lt;&#x2F;head&gt;
+            &lt;style&gt;
+                h1 {
+                    color: lightblue;
+                }
+            &lt;&#x2F;style&gt;
+            &lt;body&gt;
+                &lt;h1&gt;CSS Internal styling is awesome!&lt;&#x2F;h1&gt;
+                
+            &lt;&#x2F;body&gt;
+            &lt;&#x2F;html&gt;        </pre>
+    <p><strong>Output:</strong></p>
+
+
+    <div class="page">
+        <h1>CSS Internal styling is awesome!</h1>
+    </div>
+
+
+    <h2 id="external">1.3. External stylesheet</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>index.html</th>
+            <th>style.css</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang&#x3D;&quot;en&quot;&gt;
+        &lt;head&gt;
+        &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
+        &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
+        &lt;title&gt;My website&lt;&#x2F;title&gt;
+        &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;style.css&quot;&gt;
+        &lt;&#x2F;head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;External stylesheet is awesome!&lt;&#x2F;h1&gt;
+        &lt;&#x2F;body&gt;
+        &lt;&#x2F;html&gt;
+
+                </pre>
+            </td>
+            <td>
+                <pre>
+            h1 {
+                color: crimson;
+            }
+            </pre>
+            </td>
+        </tr>
+    </table>
+
+    <p><strong>Output:</strong></p>
+    <div class="externalPage">
+        <h1>External stylesheet is awesome!</h1>
+    </div>
+
+    <h2 id="cascading">1.4. Cascading stylesheet</h2>
+    <p><strong>Code:</strong></p>
+    <table>
+        <tr>
+            <th>index.html</th>
+            <th>style.css</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang&#x3D;&quot;en&quot;&gt;
+        &lt;head&gt;
+        &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
+        &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
+        &lt;title&gt;My website&lt;&#x2F;title&gt;
+        &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;style.css&quot;&gt;
+        &lt;&#x2F;head&gt;
+        &lt;body&gt;
+        &lt;h1 style&#x3D;&quot;color:pink&quot;&gt;Cascading stylesheets&lt;&#x2F;h1&gt;
+        &lt;&#x2F;body&gt;
+        &lt;&#x2F;html&gt;
+
+                </pre>
+            </td>
+            <td>
+                <pre>
+            h1 {
+                color: blue;
+            }
+            </pre>
+            </td>
+        </tr>
+    </table>
+
+    <p><strong>Output:</strong></p>
+    <div class="externalPage">
+        <h1 style="color:pink">Cascading stylesheets</h1>
+    </div>
+</body>
+
+</html>

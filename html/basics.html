@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: HTML basics</title>
+</head>
+
+<body>
+  <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    <h1>1. Basic HTML elements</h1> <span><a href="../index.html">Go to homepage</a></span>
+    <hr>
+    <p><em>Outline:</em></p>
+    <ol>
+        <li><a href="#docstruct">HTML documents structure</a></li>
+        <li><a href="#headerpara">Headers and paragraphs</a></li>
+        <li><a href="#strongem">Strong and Emphasis</a></li>
+        <li><a href="#hyperlink">Hyperlinks</a></li>
+    </ol>
+    <hr>
+    <h2 id="docstruct">1.1. HTML documents structure</h2>
+    <pre>
+        &lt;!doctype html&gt;
+        &lt;html lang&#x3D;&quot;en-US&quot;&gt;
+          &lt;head&gt;
+            &lt;meta charset&#x3D;&quot;utf-8&quot; &#x2F;&gt;
+            &lt;title&gt;My Webpage&lt;&#x2F;title&gt;
+          &lt;&#x2F;head&gt;
+          &lt;body&gt;
+            &lt;p&gt;Hello, world&lt;&#x2F;p&gt;
+          &lt;&#x2F;body&gt;
+        &lt;&#x2F;html&gt;
+    </pre>
+
+    <h2 id="headerpara">1.2. Headers and paragraphs</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;h1&gt;Main Header&lt;&#x2F;h1&gt;
+        &lt;h2&gt;Subheader&lt;&#x2F;h2&gt;
+        &lt;p&gt;This is a paragraph&lt;&#x2F;p&gt;
+
+    </pre>
+    <p><strong>Output:</strong></p>
+    <h1>Main Header</h1>
+    <h2>Subheader</h2>
+    <p>This is a paragraph</p>
+
+
+<h2 id="strongem">1.3. Strong and Emphasis</h2>
+<p><strong>Code:</strong></p>
+<pre>
+&lt;p&gt;&lt;strong&gt;Lorem ipsum dolor sit amet consectetur&lt;&#x2F;strong&gt; adipisicing elit. Assumenda laudantium dignissimos eum, ipsum iure ut hic quibusdam, reprehenderit nobis 
+obcaecati quod aspernatur cum nemo quaerat laborum natus nam quis quasi.Hic eligendi quae, explicabo ipsa tenetur &lt;em&gt;dolor pariatur autem molestiae odit com
+similique maxime ratione cupiditate omnis at non aperiam officia doloribus provident quasi?&lt;&#x2F;em&gt; Vero id at saepe totam omnis.&lt;&#x2F;p&gt;
+</pre>
+<p><strong>Output:</strong></p>
+<p><strong>Lorem ipsum dolor sit amet consectetur</strong> adipisicing elit. Assumenda laudantium dignissimos eum, ipsum iure ut hic quibusdam, reprehenderit nobis obcaecati quod aspernatur cum nemo quaerat laborum natus nam quis quasi.
+Hic eligendi quae, explicabo ipsa tenetur <em>dolor pariatur autem molestiae odit cum similique maxime ratione cupiditate omnis at non aperiam officia doloribus provident quasi?</em> Vero id at saepe totam omnis.</p>
+
+<h2 id="hyperlink">1.4. Hyperlinks</h2>
+<p><strong>Code:</strong></p>
+<pre>
+&lt;a href&#x3D;&quot;#&quot;&gt;Click here to go nowhere&lt;&#x2F;a&gt; or 
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.google.com&quot;&gt;Visit Google&lt;&#x2F;a&gt; or
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.google.com&quot; target&#x3D;&quot;_blank&quot;&gt;Visit Google in a new tab&lt;&#x2F;a&gt;
+</pre>
+<p><strong>Output:</strong></p>
+<a href="#">Click here to go nowhere</a> or 
+<a href="https://www.google.com">Visit Google</a> or
+<a href="https://www.google.com" target="_blank">Visit Google in a new tab</a>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Images</title>
+</head>
+
+<body>
+    <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    <h1>3. Images</h1> <span><a href="../index.html">Go to homepage</a></span>
+    <hr>
+    <p><em>Outline:</em></p>
+    <ol>
+        <li><a href="#img">the <code>img</code> element</a></li>
+        <li><a href="#hw">Manipulating width and height</a></li>
+        <li><a href="#figure">Using <code>figure</code> and <code>figcaption</code></a></li>
+        <li><a href="#responsiveImg">Responsive Images with <code>picture</code></a></li>
+    </ol>
+    <hr>
+
+    <h2 id="img">3.1. the <code>img</code> element</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;img src&#x3D;&quot;..&#x2F;assets&#x2F;cat2.jpeg&quot; alt&#x3D;&quot;an image of a cat looking up&quot;&gt;
+    </pre>
+    <p><strong>Output:</strong></p>
+    <img src="../assets/cat2.jpeg" alt="an image of a cat looking up">
+
+    <h2 id="hw">3.2. Manipulating width and height</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;img src&#x3D;&quot;..&#x2F;assets&#x2F;cat.jpeg&quot; width&#x3D;&quot;920&quot; alt&#x3D;&quot;an image of a cat looking straight forward in a grass field&quot;&gt;
+    </pre>
+    <p><strong>Output:</strong></p>
+    <img src="../assets/cat.jpeg" width="920" alt="an image of a cat looking straight forward in a grass field">
+    <!-- <img src="../assets/cat.jpeg"  width="920" height="600" alt="an image of a cat looking straight forward in a grass field"> -->
+
+    <h2 id="figure">3.3. Using <code>figure</code> and <code>figcaption</code></a></h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;figure&gt;
+         &lt;img src&#x3D;&quot;..&#x2F;assets&#x2F;cat.jpeg&quot; width&#x3D;&quot;500&quot; alt&#x3D;&quot;an image of a cat looking straight forward in a grass field&quot;&gt;
+
+         &lt;figcaption&gt;fig.1 Image of a cat&lt;&#x2F;figcaption&gt;
+        &lt;&#x2F;figure&gt;</pre>
+    <p><strong>Output:</strong></p>
+    <figure>
+        <img src="../assets/cat.jpeg" width="500" alt="an image of a cat looking straight forward in a grass field">
+
+        <figcaption> Fig.1.  A cat</figcaption>
+    </figure>
+
+    <h2 id="responsiveImg">3.4. Responsive Images with <code>picture</code></h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;picture&gt;
+             &lt;source media&#x3D;&#39;(max-width: 767px)&#39;
+                srcset&#x3D;&#39;..&#x2F;assets&#x2F;cat-sm.jpeg&#39;&#x2F;&gt;
+            &lt;source media&#x3D;&#39;(min-width: 768px)&#39;
+                srcset&#x3D;&#39;..&#x2F;assets&#x2F;cat-md.jpeg&#39;&#x2F;&gt;
+            &lt;img src&#x3D;&#39;..&#x2F;assets&#x2F;cat-md.jpeg&#39; width&#x3D;&quot;720&quot; alt&#x3D;&quot;a white cat&quot;&#x2F;&gt;
+        &lt;&#x2F;picture&gt;
+    </pre>
+    <p><strong>Output:</strong></p>
+    <picture>
+        <source media='(max-width: 767px)'
+                srcset='../assets/cat-sm.jpeg'/>
+        <source media='(min-width: 768px)'
+                srcset='../assets/cat-md.jpeg'/>
+        <img src='../assets/cat-md.jpeg' width="720" alt="a white cat"/>
+      </picture>
+
+    
+
+
+</body>
+
+</html>

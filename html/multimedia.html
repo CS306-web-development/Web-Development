@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Multimedia</title>
+</head>
+
+<body>
+    <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    <h1>4. HTML Multimedia</h1> <span><a href="../index.html">Go to homepage</a></span>
+    <hr>
+    <p><em>Outline:</em></p>
+    <ol>
+        <li><a href="#audio">Audio</a></li>
+        <li><a href="#video">Video</a></li>
+
+    </ol>
+    <hr>
+    <h2 id="audio">4.1. Audio</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+    &lt;figure&gt;
+        &lt;audio controls src&#x3D;&quot;..&#x2F;assets&#x2F;misc&#x2F;audio&#x2F;audio.mp3&quot;&gt;&lt;&#x2F;audio&gt;
+        &lt;figcaption&gt;Listen here&lt;&#x2F;figcaption&gt;&lt;span&gt; or &lt;&#x2F;span&gt;&lt;a href&#x3D;&quot;..&#x2F;assets&#x2F;misc&#x2F;audio&#x2F;audio.mp3&quot;&gt;Download&lt;&#x2F;a&gt;
+    &lt;&#x2F;figure&gt;
+
+
+    </pre>
+    <p><strong>Output:</strong></p>
+    <figure>
+        <audio controls src="../assets/misc/audio/audio.mp3"></audio>
+        <figcaption>Listen here</figcaption><span> or </span><a href="../assets/misc/audio/audio.mp3">Download</a>
+
+    </figure>
+
+    <h2 id="video">4.2. Video</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+    &lt;video controls width&#x3D;&quot;600&quot;&gt;
+        &lt;source src&#x3D;&quot;..&#x2F;assets&#x2F;misc&#x2F;video&#x2F;video.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;
+    &lt;&#x2F;video&gt;
+
+    </pre>
+    <p><strong>Output:</strong></p>
+    <video controls width="600">
+        <source src="../assets/misc/video/video.mp4" type="video/mp4">
+    </video>
+
+</body>
+
+</html>

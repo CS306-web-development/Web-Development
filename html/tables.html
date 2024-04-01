@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Tables</title>
+</head>
+
+<body>
+    <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    <h1>2. HTML Tables</h1> <span><a href="../index.html">Go to homepage</a></span>
+    <hr>
+    <p><em>Outline:</em></p>
+    <ol>
+        <li><a href="#simpleTable">Creating a simple table</a></li>
+        <li><a href="#border">Using <code>border</code> attribute</a></li>
+        <li><a href="#tableStructure"><code>thead</code>,<code>tbody</code> and <code>tfoot</code></a></li>
+        <li><a href="#spanning">Spanning mutiple Rows and Columns</a></li>
+        <li><a href="#cols"><code>col</code> and <code>colgroup</code></a></li>
+    </ol>
+    <hr>
+
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables">
+        A very common task in HTML is structuring tabular data, and it has a number of elements and attributes for just
+        this purpose. Coupled with a little CSS for styling, HTML makes it easy to display tables of information on the
+        web such as your school lesson plan, the timetable at your local swimming pool, or statistics about your
+        favorite dinosaurs or football team.
+    </blockquote>
+
+    <h2 id="simpleTable">2.1. Creating a simple table</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;&#x2F;th&gt;
+            &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+            &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+            &lt;th&gt;DOB&lt;&#x2F;th&gt;
+            &lt;th&gt;Department&lt;&#x2F;th&gt;
+            &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;&#x2F;td&gt;
+            &lt;td&gt;1234&lt;&#x2F;td&gt;
+            &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+            &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;&#x2F;td&gt;
+            &lt;td&gt;1235&lt;&#x2F;td&gt;
+            &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+            &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;    &lt;tr&gt;
+            &lt;td&gt;3&lt;&#x2F;td&gt;
+            &lt;td&gt;1236&lt;&#x2F;td&gt;
+            &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+            &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;4&lt;&#x2F;td&gt;
+            &lt;td&gt;1237&lt;&#x2F;td&gt;
+            &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+            &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;5&lt;&#x2F;td&gt;
+            &lt;td&gt;1238&lt;&#x2F;td&gt;
+            &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+            &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+    &lt;&#x2F;table&gt;
+    </pre>
+    <p><strong>Output:</strong></p>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Emp. Code</th>
+            <th>Emp. Name</th>
+            <th>DOB</th>
+            <th>Department</th>
+            <th>Remotely</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1234</td>
+            <td>John Doe</td>
+            <td>19/10/1985</td>
+            <td>IT</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1235</td>
+            <td>Emily Clark</td>
+            <td>10/9/1987</td>
+            <td>IT</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1236</td>
+            <td>Sam Smith</td>
+            <td>1/12/1990</td>
+            <td>IT</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>1237</td>
+            <td>Alan Johnson</td>
+            <td>7/11/2001</td>
+            <td>IT</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>1238</td>
+            <td>Sarah Walker</td>
+            <td>15/1/1991</td>
+            <td>IT</td>
+            <td>No</td>
+        </tr>
+    </table>
+
+    <h2 id="border">2.2. Creating a bordered table</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;table border&#x3D;&quot;1&quot;&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;&#x2F;th&gt;
+            &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+            &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+            &lt;th&gt;DOB&lt;&#x2F;th&gt;
+            &lt;th&gt;Department&lt;&#x2F;th&gt;
+            &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;&#x2F;td&gt;
+            &lt;td&gt;1234&lt;&#x2F;td&gt;
+            &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+            &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;&#x2F;td&gt;
+            &lt;td&gt;1235&lt;&#x2F;td&gt;
+            &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+            &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;    &lt;tr&gt;
+            &lt;td&gt;3&lt;&#x2F;td&gt;
+            &lt;td&gt;1236&lt;&#x2F;td&gt;
+            &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+            &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;4&lt;&#x2F;td&gt;
+            &lt;td&gt;1237&lt;&#x2F;td&gt;
+            &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+            &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;5&lt;&#x2F;td&gt;
+            &lt;td&gt;1238&lt;&#x2F;td&gt;
+            &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+            &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+            &lt;td&gt;IT&lt;&#x2F;td&gt;
+            &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+    &lt;&#x2F;table&gt;
+    </pre>
+    <p><strong>Output:</strong></p>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Emp. Code</th>
+            <th>Emp. Name</th>
+            <th>DOB</th>
+            <th>Department</th>
+            <th>Remotely</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1234</td>
+            <td>John Doe</td>
+            <td>19/10/1985</td>
+            <td>IT</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1235</td>
+            <td>Emily Clark</td>
+            <td>10/9/1987</td>
+            <td>IT</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1236</td>
+            <td>Sam Smith</td>
+            <td>1/12/1990</td>
+            <td>IT</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>1237</td>
+            <td>Alan Johnson</td>
+            <td>7/11/2001</td>
+            <td>IT</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>1238</td>
+            <td>Sarah Walker</td>
+            <td>15/1/1991</td>
+            <td>IT</td>
+            <td>No</td>
+        </tr>
+    </table>
+
+    <h2 id="tableStructure">2.3. <code>thead</code>,<code>tbody</code> and <code>tfoot</code></h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;table border&#x3D;&quot;1&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;&#x2F;th&gt;
+                &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+                &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+                &lt;th&gt;DOB&lt;&#x2F;th&gt;
+                &lt;th&gt;Department&lt;&#x2F;th&gt;
+                &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+                &lt;th&gt;Salary&lt;&#x2F;th&gt;
+            &lt;&#x2F;tr&gt;
+        &lt;&#x2F;thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;&#x2F;td&gt;
+                &lt;td&gt;1234&lt;&#x2F;td&gt;
+                &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+                &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+                &lt;td&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;&#x2F;td&gt;
+                &lt;td&gt;1235&lt;&#x2F;td&gt;
+                &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+                &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+                &lt;td&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;Yes&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;    &lt;tr&gt;
+                &lt;td&gt;3&lt;&#x2F;td&gt;
+                &lt;td&gt;1236&lt;&#x2F;td&gt;
+                &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+                &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+                &lt;td&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;Yes&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4&lt;&#x2F;td&gt;
+                &lt;td&gt;1237&lt;&#x2F;td&gt;
+                &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+                &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+                &lt;td&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;5&lt;&#x2F;td&gt;
+                &lt;td&gt;1238&lt;&#x2F;td&gt;
+                &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+                &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+                &lt;td&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+
+        &lt;&#x2F;tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Total&lt;&#x2F;td&gt;
+                &lt;td&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;$750,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+
+        &lt;&#x2F;tfoot&gt;
+    &lt;&#x2F;table&gt;
+    </pre>
+    <p><strong>Output:</strong></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Emp. Code</th>
+                <th>Emp. Name</th>
+                <th>DOB</th>
+                <th>Department</th>
+                <th>Remotely</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1234</td>
+                <td>John Doe</td>
+                <td>19/10/1985</td>
+                <td>IT</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1235</td>
+                <td>Emily Clark</td>
+                <td>10/9/1987</td>
+                <td>IT</td>
+                <td>Yes</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1236</td>
+                <td>Sam Smith</td>
+                <td>1/12/1990</td>
+                <td>IT</td>
+                <td>Yes</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>1237</td>
+                <td>Alan Johnson</td>
+                <td>7/11/2001</td>
+                <td>IT</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>1238</td>
+                <td>Sarah Walker</td>
+                <td>15/1/1991</td>
+                <td>IT</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>$750,000</td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+    <h2 id="spanning">2.4. Spanning mutiple Rows and Columns</h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;table border&#x3D;&quot;1&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;&#x2F;th&gt;
+                &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+                &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+                &lt;th&gt;DOB&lt;&#x2F;th&gt;
+                &lt;th&gt;Department&lt;&#x2F;th&gt;
+                &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+                &lt;th&gt;Salary&lt;&#x2F;th&gt;
+            &lt;&#x2F;tr&gt;
+        &lt;&#x2F;thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;&#x2F;td&gt;
+                &lt;td&gt;1234&lt;&#x2F;td&gt;
+                &lt;td &gt;John Doe&lt;&#x2F;td&gt;
+                &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+                &lt;td rowspan&#x3D;&quot;5&quot;&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;&#x2F;td&gt;
+                &lt;td&gt;1235&lt;&#x2F;td&gt;
+                &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+                &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+                &lt;td&gt;Yes&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;    &lt;tr&gt;
+                &lt;td&gt;3&lt;&#x2F;td&gt;
+                &lt;td&gt;1236&lt;&#x2F;td&gt;
+                &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+                &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+                &lt;td&gt;Yes&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4&lt;&#x2F;td&gt;
+                &lt;td&gt;1237&lt;&#x2F;td&gt;
+                &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+                &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;5&lt;&#x2F;td&gt;
+                &lt;td&gt;1238&lt;&#x2F;td&gt;
+                &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+                &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+
+        &lt;&#x2F;tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;td colspan&#x3D;&quot;6&quot;&gt;Total Salary&lt;&#x2F;td&gt;
+                &lt;td &gt;$750,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+
+        &lt;&#x2F;tfoot&gt;
+    &lt;&#x2F;table&gt;
+
+
+    </pre>
+    <p><strong>Output:</strong></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Emp. Code</th>
+                <th>Emp. Name</th>
+                <th>DOB</th>
+                <th>Department</th>
+                <th>Remotely</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1234</td>
+                <td>John Doe</td>
+                <td>19/10/1985</td>
+                <td rowspan="5">IT</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1235</td>
+                <td>Emily Clark</td>
+                <td>10/9/1987</td>
+                <td>Yes</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1236</td>
+                <td>Sam Smith</td>
+                <td>1/12/1990</td>
+                <td>Yes</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>1237</td>
+                <td>Alan Johnson</td>
+                <td>7/11/2001</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>1238</td>
+                <td>Sarah Walker</td>
+                <td>15/1/1991</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">Total Salary</td>
+                <td>$750,000</td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+    <h2 id="cols">2.5. <code>col</code> and <code>colgroup</code></h2>
+    <p><strong>Code:</strong></p>
+    <pre>
+        &lt;table border&#x3D;&quot;1&quot;&gt;
+        &lt;colgroup span&#x3D;&quot;5&quot; class&#x3D;&quot;employeeInfo&quot;&gt;
+            &lt;col style&#x3D;&quot;background-color:blanchedalmond;&quot;&gt;
+        &lt;&#x2F;colgroup&gt;
+        &lt;colgroup class&#x3D;&quot;employeeSalary&quot;&gt;&lt;&#x2F;colgroup&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;&#x2F;th&gt;
+                &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+                &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+                &lt;th&gt;DOB&lt;&#x2F;th&gt;
+                &lt;th&gt;Department&lt;&#x2F;th&gt;
+                &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+                &lt;th&gt;Salary&lt;&#x2F;th&gt;
+            &lt;&#x2F;tr&gt;
+        &lt;&#x2F;thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;1&lt;&#x2F;td&gt;
+                &lt;td&gt;1234&lt;&#x2F;td&gt;
+                &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+                &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+                &lt;td rowspan&#x3D;&quot;5&quot;&gt;IT&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;2&lt;&#x2F;td&gt;
+                &lt;td&gt;1235&lt;&#x2F;td&gt;
+                &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+                &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+                &lt;td&gt;Yes&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;3&lt;&#x2F;td&gt;
+                &lt;td&gt;1236&lt;&#x2F;td&gt;
+                &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+                &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+                &lt;td&gt;Yes&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;4&lt;&#x2F;td&gt;
+                &lt;td&gt;1237&lt;&#x2F;td&gt;
+                &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+                &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;5&lt;&#x2F;td&gt;
+                &lt;td&gt;1238&lt;&#x2F;td&gt;
+                &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+                &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+                &lt;td&gt;No&lt;&#x2F;td&gt;
+                &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+
+        &lt;&#x2F;tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;td colspan&#x3D;&quot;6&quot;&gt;Total Salary&lt;&#x2F;td&gt;
+                &lt;td&gt;$750,000&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+
+        &lt;&#x2F;tfoot&gt;
+    &lt;&#x2F;table&gt;
+
+    </pre>
+    <p><strong>Output:</strong></p>
+    <table border="1">
+        <colgroup span="5" class="employeeInfo">
+            <col style="background-color:blanchedalmond;">
+        </colgroup>
+        <colgroup class="employeeSalary"></colgroup>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Emp. Code</th>
+                <th>Emp. Name</th>
+                <th>DOB</th>
+                <th>Department</th>
+                <th>Remotely</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1234</td>
+                <td>John Doe</td>
+                <td>19/10/1985</td>
+                <td rowspan="5">IT</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1235</td>
+                <td>Emily Clark</td>
+                <td>10/9/1987</td>
+                <td>Yes</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1236</td>
+                <td>Sam Smith</td>
+                <td>1/12/1990</td>
+                <td>Yes</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>1237</td>
+                <td>Alan Johnson</td>
+                <td>7/11/2001</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>1238</td>
+                <td>Sarah Walker</td>
+                <td>15/1/1991</td>
+                <td>No</td>
+                <td>$150,000</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">Total Salary</td>
+                <td>$750,000</td>
+            </tr>
+
+        </tfoot>
+    </table>
+    
+
+
+
+</body>
+
+</html>
