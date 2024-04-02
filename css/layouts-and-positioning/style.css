@@ -1,0 +1,32 @@
+table td {
+    vertical-align: baseline;
+}
+
+.displayWrapper {
+    a {
+        display:block;
+    }
+}
+
+.floatWrapper {
+    img {
+        width: 150px;
+        float:left;
+        margin: 10px;
+        
+    }
+}
+
+
+.layoutWrapper  {
+    .col {
+        box-sizing: border-box;
+        border: 1px solid gray;
+        padding:5px;
+        width: calc(100%/3);
+        float:left;
+        max-height: 200px;
+        overflow-y: scroll;
+    }
+
+}
