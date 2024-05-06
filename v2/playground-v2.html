@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Playground</title>
+    <link rel="stylesheet" href="stylesheets/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    iframe {
+        padding-top: 30px;
+        overflow: scroll;
+        height: 100%;
+        border: 1px solid lightsteelblue;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    textarea {
+        resize: none;
+        min-height: 100%;
+        padding: 40px;
+        border-radius: 5px;
+        font-family: 'Fira Mono', monospace;
+        background-color: transparent;
+        outline-color: rgb(139, 179, 230);
+        overflow: scroll;
+        border: 1px solid lightsteelblue;
+        caret-color: blue;
+    }
+
+    .playgroundWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 2fr;
+        height: 100%;
+        gap: .5px;
+        padding: 2px;
+        max-width: 100%;
+    }
+
+    .extras {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .note {
+        position: absolute;
+        top: 0;
+        right:0;
+        font-size: 0.8em;
+        margin: 10px;
+    }
+
+
+    .playgroundWrapper>div:is(.hidden):not(.cssEditWrap):not(.htmlEditWrap) {
+        display: none;
+
+        &+.previewWrap {
+            grid-column: 1/3;
+        }
+    }
+
+    .runWrapper .runBtn {
+        border: 1px solid black;
+        background-color: transparent;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+
+    }
+
+    .runWrapper .runBtn:hover {
+        color: white;
+        background-color: black;
+
+    }
+
+    .runWrapper .runBtn:active {
+        transform: scale(0.95);
+    }
+
+
+
+
+    .htmlEditWrap,
+    .cssEditWrap,
+    .jsEditWrap,
+    .previewWrap {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+    }
+
+    label {
+        background-color: transparent;
+        padding: 5px;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+
+
+
+    .mobile-visit {
+        display: none;
+    }
+
+    @media only screen and (max-width:768px) {
+
+        .mobile-visit {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+
+        }
+
+        .pageTitle,
+        .playgroundWrapper {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <div class="headerWrapper">
+        <header>
+            <div class="titleWrapper">
+                <span id="title">CS306: Web Programming</span>
+            </div>
+            <div class="extras">
+                <div class="pageTitle"> PLAYGROUND</div>
+                <div class="runWrapper"><button class="runBtn animated"> &#9658; run code</button></div>
+            </div>
+            <div class="copyrightWrapper">
+                <span id="copy"> v2.0 &copy; 2023-2024</span>
+            </div>
+        </header>
+    </div>
+    <div class="mobile-visit">
+        <h1>Sorry, Playground is not available for mobile devices!</h1>
+        <p>Try using a Desktop PC or a laptop instead</p>
+    </div>
+    <div class="playgroundWrapper">
+        <div class="htmlEditWrap ">
+            <label for="htmlEdit">HTML</label>
+            <textarea name="htmlEdit" id="htmlEdit" placeholder="Write HTML code here..." cols="30" rows="10"></textarea>
+        </div>
+        <div class="cssEditWrap">
+            <label for="cssEdit">CSS</label>
+            <textarea name="cssEdit" id="cssEdit" placeholder="Write CSS code here..." cols="30" rows="10"></textarea>
+
+        </div>
+        <div class="jsEditWrap">
+            <label for="jsEdit">JS</label>
+            <span class="note"> <input type="checkbox" checked readonly name="manual-execute" id="manual-execute"> Disable auto-run</span>
+            <textarea name="jsEdit" id="jsEdit" placeholder="Write JS code here..."cols="30" rows="10"></textarea>
+
+        </div>
+        <div class="previewWrap">
+            <label for="preview">OUTPUT: <span style="font-weight: lighter;" id="viewport"></span></label>
+            <iframe src="" id="preview"></iframe>
+        </div>
+
+    </div>
+</body>
+<script>
+    let isBtnClicked;
+    let wrapperEl = document.querySelector('.playgroundWrapper')
+    let htmlEditEl = document.querySelector('#htmlEdit')
+    let cssEditEl = document.querySelector('#cssEdit')
+    let jsEditEl = document.querySelector('#jsEdit')
+    let allEditEls = document.querySelectorAll('textarea')
+    let previewEl = document.querySelector('#preview')
+    let previewWindow = previewEl.contentWindow;
+    let previewDocument = previewWindow.document;
+
+    let jsEditWrapEl = document.querySelector('.jsEditWrap')
+    let viewportEl = document.querySelector('#viewport')
+    let runBtnEl = document.querySelector('.runBtn')
+
+    previewDocument.head.appendChild(previewDocument.createElement('style'))
+    previewDocument.head.appendChild(previewDocument.createElement('script'))
+
+
+    function calculateViewport() {
+        viewportEl.innerText = `${previewEl.contentWindow.innerWidth}x${previewEl.contentWindow.innerHeight}`
+    }
+
+    function saveContent(editArea) {
+        localStorage.setItem(`${editArea.name}`, editArea.value)
+    }
+
+
+    function loadLastEdit() {
+        // preview last saved edit session
+        htmlEditEl.value = localStorage.getItem('htmlEdit');
+        cssEditEl.value = localStorage.getItem('cssEdit');
+        jsEditEl.value = localStorage.getItem('jsEdit');
+    }
+
+    function loadPreview(editArea) {
+
+        switch (editArea.name) {
+            case 'htmlEdit':
+                previewDocument.querySelector('body').innerHTML = editArea.value;
+                break;
+            case 'cssEdit':
+                previewDocument.querySelector('style').textContent = editArea.value;
+                break;
+            case 'jsEdit':
+                previewDocument.querySelector('script').textContent = editArea.value;
+                previewDocument.head.appendChild('script')
+                break;
+            default:
+                break;
+        }
+
+
+    }
+
+
+    function livePreview() {
+
+        // preview after edit
+
+        setTimeout(() => {
+            previewDocument.querySelector('body').innerHTML = htmlEditEl.value
+            previewDocument.querySelector('style').textContent = cssEditEl.value
+            previewDocument.querySelector('script').textContent = jsEditEl.value
+        }, 500);
+
+        // preview on change
+
+        allEditEls.forEach((editArea) => {
+            editArea.addEventListener('input', (e) => {
+                saveContent(editArea, e.target.name);
+                loadPreview(editArea, e.target.name);
+            })
+        })
+
+    }
+
+    runBtnEl.addEventListener('click', () => {
+        window.location.reload()
+        
+})
+
+
+
+
+calculateViewport()
+loadLastEdit()
+livePreview()
+
+
+
+
+</script>
+
+</html>

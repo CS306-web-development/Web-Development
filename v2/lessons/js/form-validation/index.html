@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" tye="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></link>
+</head>
+<style>
+    @font-face {
+        font-family: 'IBMPlexSans';
+        src:
+            url('./assets/font/IBM_Plex_Sans/IBMPlexSans-Regular.ttf'),
+    }
+
+    * {
+        font-family: 'IBMPlexSans', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+        background-color: #111;
+        color: white;
+    }
+
+    h1,p {
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    input:is(:not([type="radio"])) {
+        padding: 8px 15px;
+        background-color: #555;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 320px;
+        outline: none;
+    }
+
+    input{
+        margin-top: 5px;
+        margin-bottom: 10px;
+        
+    }
+    label:not(:has(+ input[type="radio"])) {
+        font-size: 0.9rem;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fa-solid {
+        font-size: 0.7rem;
+    }
+    .fa-solid:hover {
+        color: #777;
+        cursor:pointer;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .formWrapper {
+        padding: 2rem 18px;
+        border: 1px solid #55555537;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+        border-radius: 15px;
+        margin-top: 30px;
+        max-width: min-content;
+    }
+
+
+    .btn {
+        margin-top: 10px;
+        width: 100%;
+        border: none;
+        padding: 8px 15px;
+        background-color: #999;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+        background-color: #f2f2f2;
+        transform: scale(1.02);
+    }
+
+    .msg {
+        position: relative;
+        top:0;
+        bottom:0;
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+        padding: 0;
+        color:red;
+        text-wrap: wrap;
+    }
+    
+    .invalid {
+        outline: 1px solid crimson;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .form-group {
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <main>
+            <h1>Sign up now for free</h1>
+            <p>Create a new account</p>
+            <div class="formWrapper">
+                <form class="signupForm" name="signupForm">
+                    <label for="userName">Username *</label>
+                    <div class="form-group">
+                        <input type="text" name="userName" id="userName" autocomplete="off" maxlength="25" autofocus placeholder="johndoe">
+                        <div class="validate-userName msg hidden"></div>
+                    </div>
+                    <label for="email">Email Address *</label>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" autocomplete="off" placeholder="john.doe@example.com">
+                        <div class="validate-email msg hidden"></div>
+
+                    </div>
+                    <label for="phoneNo">Phone Number (country code: +20 )</label>
+                    <div class="form-group">
+                        <input type="text" name="phoneNo" id="phoneNo" placeholder="+2001XXXXXXXXX">
+                        <div class="validate-phoneNo msg hidden"></div>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <input type="radio" name="gender" id="male" value="m"> Male
+                        <input type="radio" name="gender" id="female" value="f"> Female
+                    </div>
+                    <label for="password">Password * <span class="showPass"><abbr title="show password"><i class="fa-solid fa-eye"></i></abbr></span></label>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password">
+                        <div class="validate-password msg hidden"></div>
+
+                    </div>
+
+                    <label for="password">Confirm Password * <span class="showPass"><abbr title="show password"><i class="fa-solid fa-eye"></i></abbr></span></label> 
+                    <div class="form-group">
+                        <input type="password" name="passwordConfirm" id="passwordConfirm">
+                        <div class="validate-passwordConfirm msg hidden"></div>
+                    </div>
+                    <button type="submit" class="btn submitBtn">Create Account</button>
+                </form>
+            </div>
+        </main>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>

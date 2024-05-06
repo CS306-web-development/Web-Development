@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS306: Web Programming</title>
+    <link rel="stylesheet" href="stylesheets/global.css">
+</head>
+<style>
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opactiy: 1;
+        }
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 8px;
+        align-items: center;
+    }
+
+    main {
+        grid-area: 'main';
+
+    }
+
+    aside {
+        grid-area: 'aside';
+        padding: 30px;
+        width:max-content;
+
+    }
+
+    .headerWrapper {
+        background-color: lightsteelblue;
+        border-bottom: 1px solid rgb(150, 182, 224);
+        /* box-shadow: 0px 1px black inset; */
+
+    }
+
+
+    #title {
+        font-weight: bold;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: 'main aside main aside';
+        padding: 8px;
+
+    }
+
+
+    .courseMeta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .courseTitle {
+        position: relative;
+    }
+
+
+    .moduleWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 30px;
+        border: 1px solid black;
+        position: relative;
+        justify-content: center;
+        align-items: start;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 2px 5px;
+        margin: 1.5rem 0;
+    }
+
+    .moduleTitle {
+        font-size: 1.5em;
+    }
+
+    .courseTitle,
+    .courseDesc {
+        margin-bottom: 18px;
+    }
+
+    .lessonList {
+        padding-inline-start: 4rem;
+        list-style-position: outside;
+    }
+
+    .announcement {
+        border: none;
+        box-shadow: 4px 2px black;
+        background-color: lightsteelblue;
+        padding: 30px;
+        margin-top: 20px;
+        color: white;
+        border-radius: 5px;
+        position: relative;
+    }
+
+
+    .announcement::before {
+        content: 'new!';
+        text-transform: uppercase;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        padding: 5px;
+        margin-bottom: 5px;
+        font-size: 0.6em;
+        font-weight: bold;
+        border-radius: 5px;
+        animation: appear 1s infinite ease-in-out;
+    }
+
+    .playground-link {
+        color: black;
+    }
+
+    .playground-link:hover {
+        color: white;
+        background-color: black;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .content {
+            grid-template-columns: 1fr;
+        }
+
+        .courseTitle,.courseDesc {
+            text-align: center;
+        }
+
+        
+        aside {
+            visibility:hidden;
+        }
+
+        .moduleWrapper {
+            grid-template-columns: 1fr 2fr;
+            justify-content: space-between;
+
+        }
+
+    }
+</style>
+
+<body>
+    <div class="headerWrapper">
+        <header>
+            <div class="titleWrapper">
+                <span id="title">CS306: Web Programming</span>
+            </div>
+            <div class="copyrightWrapper">
+                <span id="copy"> v2.0 &copy; 2023-2024</span>
+            </div>
+        </header>
+    </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="mainWrapper">
+                <main>
+                    <div class="courseTitle">
+                        <h1>CS306: The Web Development Course</h1>
+                    </div>
+                    <div class="courseDesc">
+                        <p><em>Learn the basics of web development</em></p>
+                    </div>
+                    <div class="outlineWrapper">
+                        <h2>Course Outline</h2>
+                        <div class="moduleWrapper">
+                            <div class="moduleInfo">
+                                <div class="modNo">#1</div>
+                                <div class="moduleTitle">
+                                    <h3><abbr title="Hypertext Markup Language">HTML</abbr></h3>
+                                </div>
+                                <div class="moduleDescription">
+                                    <p>structure of the webpage</p>
+                                </div>
+                            </div>
+                            <div class="moduleLessons">
+                                <strong>Lessons</strong>
+                                <ol class="lessonList">
+                                    <li class="lessonListItem"><a target="_blank" href="../html/basics.html">Basic HTML Elements</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="../html/tables.html">HTML Tables</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="../html/images.html">HTML Images</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="../html/multimedia.html">HTML Multimedia</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="../html/forms.html">Web Forms</a></li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="moduleWrapper">
+                            <div class="moduleInfo">
+                                <div class="modNo">#2</div>
+                                <div class="moduleTitle">
+                                    <h3><abbr title="Cascading stylesheets">CSS</abbr></h3>
+                                </div>
+                                <div class="moduleDescription">
+                                    <p>Styling webpages</p>
+                                </div>
+                            </div>
+                            <div class="moduleLessons">
+                                <strong>Lessons</strong>
+                                <ol class="lessonList">
+
+                                    <li class="lessonListItem"><a target="_blank" href="../css/stylesheets/applying-stylesheets.html">Applying stylesheets</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="../css/styling-elements/styling-elements.html">Styling elements</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="../css/layouts-and-positioning/layouts-and-positioning.html">Layouts and Positioning</a></li>
+
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="moduleWrapper">
+                            <div class="moduleInfo">
+                                <div class="modNo">#3</div>
+                                <div class="moduleTitle">
+                                    <h3><abbr title="Cascading stylesheets">JavaScript</abbr></h3>
+                                </div>
+                                <div class="moduleDescription">
+                                    <p>Creating dynamic webpages</p>
+                                    <p><strong>(Project-based)</strong></p> 
+                                </div>
+                            </div>
+                            <div class="moduleLessons">
+                                <strong>Lessons</strong>
+                                <ol class="lessonList">
+
+                                    <li class="lessonListItem"><a target="_blank" href="./lessons/js/counter/index.html">Counter</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="./lessons/js/time-teller/index.html">Time Teller</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="./lessons/js/background-color-picker/index.html">Background Color Picker</a></li>
+                                    <li class="lessonListItem"><a target="_blank" href="./lessons/js/form-validation/index.html">Form Validation</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="asideWrapper">
+                <aside>
+                    <div class="courseInfo">
+                        <div class="courseMeta">
+                            <div class="dept">
+                                <p><strong style="text-decoration: underline;">Dept</strong>: <span
+                                        id="deptVal">Computer Science</span></p>
+                            </div>
+                            <div class="level">
+                                <p><strong style="text-decoration: underline;">Level</strong>: <span
+                                        id="levelVal">Two</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="announcements">
+                        <div class="announceWrapper">
+                            <div class="announcement">
+                                Try out the <a class="playground-link" target="_blank" href="./playground-v2.html">playground</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
