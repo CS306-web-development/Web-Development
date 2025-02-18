@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/global.css">
+    <title>CS306: HTML basics</title>
+</head>
+
+<body>
+    <div>
+        <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    </div>
+    <div class="lesson-header wrapper">
+        <div class="lesson-title">
+            <h1>1. Basic HTML elements</h1>
+        </div>
+        <div class="lesson-navigate-back">
+            <a href="../../index.html">
+                <span class="navigate-back-sign">˿</span>
+                Back to homepage</a>
+        </div>
+    </div>
+    <div class="lesson-container">
+        <div class="lesson-content wrapper">
+            <main>
+                <section id="docstructure">
+                    <h2>1.1. HTML document structure</h2>
+                    <div class="code-demo">
+                        <div class="code">
+                            <pre>
+    &lt;!doctype html&gt;
+    &lt;html lang&#x3D;&quot;en-US&quot;&gt;
+        &lt;head&gt;
+            &lt;meta charset&#x3D;&quot;utf-8&quot; &#x2F;&gt;
+            &lt;title&gt;My Webpage&lt;&#x2F;title&gt;
+        &lt;&#x2F;head&gt;
+        &lt;body&gt;
+            &lt;p&gt;Hello, world&lt;&#x2F;p&gt;
+        &lt;&#x2F;body&gt;
+    &lt;&#x2F;html&gt;
+                        </pre>
+                        </div>
+                    </div>
+                    <p>
+                        An HTML document is structured into two main parts: the <code>&lt;head&gt;</code> and the
+                        <code>&lt;body&gt;</code>. The <code>&lt;head&gt;</code> contains metadata like the character
+                        encoding (<code>&lt;meta charset="utf-8"&gt;</code>) and the page title
+                        (<code>&lt;title&gt;</code>). The <code>&lt;body&gt;</code> holds the visible content, such as
+                        text, images, and other elements. The entire document starts with
+                        <code>&lt;!DOCTYPE html&gt;</code> to declare it as an HTML5 file and is wrapped in the
+                        <code>&lt;html&gt;</code> tag. This structure makes the page easy for browsers to read and
+                        display.
+                    </p>
+                </section>
+                <section id="headers&paragraphs">
+                    <h2>1.2. Headers and paragraphs</h2>
+                    <div class="code-demo">
+                        <div class="code">
+                            <pre>
+    &lt;h1&gt;Main Header&lt;&#x2F;h1&gt;
+    &lt;h2&gt;Subheader&lt;&#x2F;h2&gt;
+    &lt;h3&gt;another subheader&lt;&#x2F;h3&gt;
+    &lt;h4&gt;another subheader&lt;&#x2F;h4&gt;
+    &lt;h5&gt;another subheader&lt;&#x2F;h5&gt;
+    &lt;h6&gt;another subheader&lt;&#x2F;h6&gt;
+    &lt;p&gt;This is a paragraph&lt;&#x2F;p&gt;
+                         </pre>
+                        </div>
+                        <div class="preview">
+                            <h1>Main Header</h1>
+                            <h2>Subheader</h2>
+                            <h3>another subheader</h3>
+                            <h4>another subheader</h4>
+                            <h5>another subheader</h5>
+                            <h6>another subheader</h6>
+                            <p>This is a paragraph</p>
+                        </div>
+                    </div>
+                    <p>HTML headers and paragraph elements are fundamental building blocks for structuring content on a
+                        webpage. Headers, defined by the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags, are
+                        used to create hierarchical headings, with <code>&lt;h1&gt;</code> being the most important
+                        (usually the main title) and <code>&lt;h6&gt;</code> the least important. They help organize
+                        content, improve readability, and assist search engines in understanding the page structure.
+                        Paragraphs, defined by the <code>&lt;p&gt;</code> tag, are used to group blocks of text into
+                        readable sections. Together, headers and paragraphs create a clear and logical flow of
+                        information. </p>
+
+                </section>
+
+                <section id="strong&em">
+                    <h2>1.3. Strong and Emphasis</h2>
+                    <div class="code-demo">
+                        <div class="code">
+                            <pre>
+&lt;p&gt;
+&lt;strong&gt;Lorem ipsum dolor sit amet consectetur&lt;&#x2F;strong&gt; adipisicing elit. Assumenda laudantium dignissimos eum, ipsum iure ut hic quibusdam, reprehenderit nobis obcaecati quod aspernatur cum nemo quaerat laborum natus nam quis quasi.Hic eligendi quae, explicabo ipsa tenetur &lt;em&gt;dolor pariatur autem molestiae odit com similique maxime ratione cupiditate omnis at non aperiam officia doloribus provident quasi?&lt;&#x2F;em&gt; Vero id at saepe totam omnis.
+&lt;&#x2F;p&gt;
+                         </pre>
+                        </div>
+                        <div class="preview">
+                            <p><strong>Lorem ipsum dolor sit amet consectetur</strong> adipisicing elit. Assumenda
+                                laudantium dignissimos eum, ipsum iure ut hic quibusdam, reprehenderit nobis obcaecati
+                                quod aspernatur cum nemo quaerat laborum natus nam quis quasi.
+                                Hic eligendi quae, explicabo ipsa tenetur <em>dolor pariatur autem molestiae odit cum
+                                    similique maxime ratione cupiditate omnis at non aperiam officia doloribus provident
+                                    quasi?</em> Vero id at saepe totam omnis.</p>
+                        </div>
+                    </div>
+                    <p>
+                        The <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> elements in HTML are semantic tags
+                        used to add meaning and emphasis to text. The <code>&lt;strong&gt;</code> tag indicates that the
+                        enclosed text is of strong importance, typically displayed in bold by browsers, while the
+                        <code>&lt;em&gt;</code> tag emphasizes text, usually rendered in italics. These elements not
+                        only enhance visual presentation but also improve accessibility, as screen readers interpret
+                        them to convey emphasis or importance to users. Alongside other semantic elements like
+                        <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and
+                        <code>&lt;footer&gt;</code>, they help create a well-structured and meaningful document.
+                        Semantic elements like these make HTML more readable for developers and more understandable for
+                        both browsers and assistive technologies, ensuring a better user experience.
+                    </p>
+                </section>
+
+                <section id="hyperlinks">
+                    <h2>1.4. Hyperlinks</h2>
+                    <div class="code-demo">
+                        <div class="code">
+                            <pre style="text-align: left;">
+&lt;a href&#x3D;&quot;#&quot;&gt;Click here to go nowhere&lt;&#x2F;a&gt; or &lt;br&gt;
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.google.com&quot;&gt;Visit Google&lt;&#x2F;a&gt; or &lt;br&gt;
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.google.com&quot; target&#x3D;&quot;_blank&quot;&gt;Visit Google in a new tab&lt;&#x2F;a&gt;
+                         </pre>
+                        </div>
+                        <div class="preview">
+                            <a href="#">Click here to go nowhere</a> or <br>
+                            <a href="https://www.google.com">Visit Google</a> or <br>
+                            <a href="https://www.google.com" target="_blank">Visit Google in a new tab</a> <br>
+                        </div>
+                    </div>
+                    <p>
+                        The hyperlink element in HTML, defined by the <code>&lt;a&gt;</code> tag, is used to create
+                        clickable links that navigate users to other web pages, files, or specific sections within the
+                        same page. The <code>href</code> attribute specifies the destination of the link, while the text
+                        between the opening and closing <code>&lt;a&gt;</code> tags serves as the clickable anchor.
+                        Hyperlinks can also include attributes like <code>target="_blank"</code> to open the link in a
+                        new tab or <code>title</code> to provide additional information. As a fundamental part of the
+                        web, hyperlinks connect content across the internet. </p>
+
+                </section>
+
+                <section id="lists">
+                    <h2>1.5. Lists</h2>
+                    <div class="code-demo">
+                        <div class="code">
+                            <pre style="text-align:left;">
+&lt;!-- Unordered List --&gt;
+&lt;p&gt;My Shopping List&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Apples&lt;/li&gt;
+    &lt;li&gt;Bananas&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+    &lt;li&gt;Bread&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;p&gt;My Top 3 Favourite Programming Languages&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;Java&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Definition List --&gt;
+&lt;p&gt;Web Development Terms&lt;/p&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language - The standard language for creating web pages.&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets - Used for styling and formatting web pages.&lt;/dd&gt;
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;A programming language used to add interactivity to web pages.&lt;/dd&gt;
+&lt;/dl&gt;
+                         </pre>
+                        </div>
+                        <div class="preview" style="padding-inline: 30px;">
+                            <!-- Unordered List -->
+                            <p>My Shopping List</p>
+                            <ul style="padding: 10px;">
+                                <li>Apples</li>
+                                <li>Bananas</li>
+                                <li>Milk</li>
+                                <li>Bread</li>
+                            </ul>
+
+                            <!-- Ordered List -->
+                            <p>My Top 3 Favourite Programming Languages</p>
+                            <ol style="padding: 10px;">
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>Java</li>
+                            </ol>
+
+                            <!-- Definition List -->
+                            <p>Web Development Terms</p>
+                            <dl style="padding: 10px;">
+                                <dt>HTML</dt>
+                                <dd>HyperText Markup Language - The standard language for creating web pages.</dd>
+                                <dt>CSS</dt>
+                                <dd>Cascading Style Sheets - Used for styling and formatting web pages.</dd>
+                                <dt>JavaScript</dt>
+                                <dd>A programming language used to add interactivity to web pages.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <p>
+                        HTML provides several elements for creating lists, which are essential for organizing and presenting information in a structured way. Unordered lists (<code>&lt;ul&gt;</code>) are used for items without a specific order, typically displayed with bullet points. Ordered lists (<code>&lt;ol&gt;</code>) are used for items that follow a sequence, displayed with numbers or letters. Definition lists (<code>&lt;dl&gt;</code>) are used for terms and their descriptions, with <code>&lt;dt&gt;</code> for the term and <code>&lt;dd&gt;</code> for the definition. Lists improve readability, enhance accessibility, and help users navigate content more effectively. Proper use of these elements ensures a clean and logical structure for web pages.
+                    </p>
+
+                </section>
+
+            </main>
+        </div>
+        <div class="lesson-outline">
+            <aside>
+                <p class="outline-title">outline</p>
+                <ol>
+                    <li><a href="#docstructure">HTML documents structure</a></li>
+                    <li><a href="#headers&paragraphs">Headers and paragraphs</a></li>
+                    <li><a href="#strong&em">Strong and Emphasis</a></li>
+                    <li><a href="#hyperlinks">Hyperlinks</a></li>
+                    <li><a href="#lists">Lists</a></li>
+
+                </ol>
+            </aside>
+        </div>
+
+    </div>
+
+</body>
+<script>
+</script>
+
+</html>
