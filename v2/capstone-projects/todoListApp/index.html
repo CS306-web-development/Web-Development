@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project: Todo List App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../stylesheets/global.css">
+</head>
+<style>
+    h1,h3{
+        margin: 30px
+    }
+
+
+    h1 {
+        position: relative;
+        margin-bottom: 18px;
+    }
+
+    .decoration::after {
+        content:'';
+        position:absolute;
+        bottom:0;
+        left:0;
+        border-bottom: 3px solid lightsteelblue;
+        width:10%;
+        /* padding: 30px */
+    }
+</style>
+<body>
+    <h1>Capstone Project #1: Todo List App <span class="decoration"></span></h1>
+    <div class="wrapper">
+
+    <h3>Project Details</h3>
+    <div class="accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Project Description
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+               <strong>You are asked to implement a todo list app using HTML, CSS and JavaScript.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Requirements
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <strong>Consider the following requirements:</strong>
+                <ul>
+                    <li>You app should allow user to add new todo, mark todos as complete and delete todos using UI elements.</li>
+                    <li>Clear input fields after submission.</li>
+                    <li>Users can edit their submitted todo items. <strong>[optional]</strong></li>
+                    <li>Store todo item with a timestamp and display the list ordered from new to old.</li>
+                    <li>Make todo list state persistent after page refresh. <strong>[optional]</strong></li>
+                    <li>Your app should display correctly on smaller screen sizes.</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Tools you'll need
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <p>You are free to use the tools of your choice, but here's some recommended tools to consider:</p>
+                <ul>
+                    <li><strong>IDE</strong> : VS Code</li>
+                    <li><strong>Extensions for VS Code</strong>: Live Server</li>
+                    <li><strong>Browser</strong> : Google Chrome, Mozilla Firefox</li>
+                    <li><strong>Third-party tools</strong> : Bootstrap, Google fonts</li>
+
+                    
+
+                    
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+</body>
+</html>

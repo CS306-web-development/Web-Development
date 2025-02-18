@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/global.css">
+    <title>CS306: Images</title>
+</head>
+
+<body>
+    <div>
+        <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    </div>
+    <div class="lesson-header wrapper">
+        <div class="lesson-title">
+            <h1>3. Images</h1>
+        </div>
+        <div class="lesson-navigate-back">
+            <a href="../../index.html">
+                <span class="navigate-back-sign">˿</span>
+                Back to homepage</a>
+        </div>
+    </div>
+    <div class="lesson-container">
+        <div class="lesson-content wrapper">
+            <section id="img">
+                <h2>3.1. the <code>img</code> element</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre>
+&lt;img src&#x3D;&quot;cat2.jpeg&quot; alt&#x3D;&quot;an image of a cat looking up&quot;&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <img style="max-width: 100%;"src="../../../assets/cat2.jpeg" alt="an image of a cat looking up">
+                    </div>
+                </div>
+                <p>
+                    The <code>&lt;img&gt;</code> tag in HTML is used to embed images into a webpage. It is a self-closing tag that requires two essential attributes: <code>src</code>, which specifies the path to the image file, and <code>alt</code>, which provides alternative text for screen readers and when the image cannot be displayed. Additional attributes like <code>width</code>, <code>height</code>, and <code>title</code> can be used to control the image's dimensions and provide extra information. The <code>&lt;img&gt;</code> tag supports various image formats, such as JPEG, PNG, GIF, and SVG. </p>
+
+            </section>
+
+            <section id="height&width">
+                <h2>3.2. Manipulating width and height</h2>
+                <div class="code-demo">
+                    <div class="code">
+                    <pre style="text-align: left;">
+&lt;img src&#x3D;&quot;cat.jpeg&quot; width&#x3D;&quot;540&quot; alt&#x3D;&quot;an image of a cat looking straight forward in a grass field&quot;&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <img src="../../../assets/cat.jpeg" width="540" alt="an image of a cat looking straight forward in a grass field">
+
+                    </div>
+                </div>
+
+                <p>
+                    The <code>width</code> and <code>height</code> attributes in the <code>&lt;img&gt;</code> tag are used to specify the dimensions of an image in pixels. These attributes control the size at which the image is displayed on the webpage, ensuring it fits properly within the layout. Setting explicit dimensions can improve page performance by reducing layout shifts during loading, as the browser reserves space for the image before it fully loads. However, it’s important to maintain the image's aspect ratio to avoid distortion. While these attributes can be overridden with CSS, using them directly in the <code>&lt;img&gt;</code> tag provides a fallback and ensures better control over the image's display. </p>
+            </section>
+
+            <section id="figure">
+                <h2>3.3. Using <code>figure</code> and <code>figcaption</code></h2>
+                <div class="code-demo">
+                    <div class="code">
+                    <pre style="text-align: left;">
+&lt;figure&gt;
+&lt;img src&#x3D;&quot;..&#x2F;assets&#x2F;cat.jpeg&quot; width&#x3D;&quot;500&quot; alt&#x3D;&quot;an image of a cat looking straight forward in a grass field&quot;&gt;
+&lt;figcaption&gt;fig.1 Image of a cat&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;</pre>
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <figure>
+                            <img src="../../../assets/cat.jpeg" width="500" alt="an image of a cat looking straight forward in a grass field">
+                    
+                            <figcaption> Fig.1:  A cat</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p>
+                    The <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements in HTML are used to semantically group images with their captions. The <code>&lt;figure&gt;</code> tag represents self-contained content, such as images, diagrams, or illustrations, while the <code>&lt;figcaption&gt;</code> tag provides a caption or description for the content inside the <code>&lt;figure&gt;</code>. This pairing improves accessibility by associating the image with its caption, making it easier for screen readers to convey the relationship. It also enhances the structure and readability of the code, as the caption is explicitly linked to the image. Using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> is particularly useful for articles, tutorials, or any content where images require context or explanation. </p>
+
+            </section>
+            
+            <section id="responsiveImgs">
+                <h2>3.4. Responsive images with <code>picture</code></h2>
+                <div class="code-demo">
+                    <div class="code">
+                    <pre style="text-align: left;">
+&lt;picture&gt;
+&lt;source media&#x3D;&#39;(max-width: 767px)&#39;
+    srcset&#x3D;&#39;..&#x2F;assets&#x2F;cat-sm.jpeg&#39;&#x2F;&gt;
+&lt;source media&#x3D;&#39;(min-width: 768px)&#39;
+    srcset&#x3D;&#39;..&#x2F;assets&#x2F;cat-md.jpeg&#39;&#x2F;&gt;
+&lt;img src&#x3D;&#39;..&#x2F;assets&#x2F;cat-md.jpeg&#39; width&#x3D;&quot;720&quot; alt&#x3D;&quot;a white cat&quot;&#x2F;&gt;
+&lt;&#x2F;picture&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <picture>
+                            <source media='(max-width: 767px)'
+                                    srcset='../../../assets/cat-sm.jpeg'/>
+                            <source media='(min-width: 768px)'
+                                    srcset='../../../assets/cat-md.jpeg'/>
+                            <img src='../../../assets/cat-lg.jpeg' width="500" alt="a white cat"/>
+                          </picture>
+                    
+                    </div>
+                </div>
+
+                <p>
+                    The <code>&lt;picture&gt;</code> element in HTML is used to create responsive images that adapt to different screen sizes, resolutions, and device capabilities. It allows developers to provide multiple versions of an image using the <code>&lt;source&gt;</code> tag, each with specific conditions defined by attributes like <code>media</code>, <code>srcset</code>, and <code>type</code>. The browser selects the most appropriate image based on factors such as viewport width, pixel density, or supported image formats. A fallback <code>&lt;img&gt;</code> tag is included inside the <code>&lt;picture&gt;</code> element to ensure compatibility with browsers that do not support the <code>&lt;picture&gt;</code> element. This approach optimizes performance by delivering the most suitable image for each device, improving load times and user experience. </p>
+            </section>
+
+        </div>
+        <div class="lesson-outline">
+            <aside>
+                <p class="outline-title">outline</p>
+                <ol>
+                    <li><a href="#img">the <code>img</code> element</a></li>
+                    <li><a href="#height&width">Manipulating width and height</a></li>
+                    <li><a href="#figure">Using <code>figure</code> and <code>figcaption</code></a></li>
+                    <li><a href="#responsiveImgs">Responsive images with <code>picture</code></a></li>
+                </ol>
+            </aside>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

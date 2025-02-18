@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/global.css">
+    <title>CS306: Multimedia</title>
+</head>
+
+<body>
+    <div>
+        <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    </div>
+    <div class="lesson-header wrapper">
+        <div class="lesson-title">
+            <h1>4. HTML Multimedia</h1>
+        </div>
+        <div class="lesson-navigate-back">
+            <a href="../../index.html">
+                <span class="navigate-back-sign">˿</span>
+                Back to homepage</a>
+        </div>
+    </div>
+     <div class="lesson-container">
+        <div class="lesson-content wrapper">
+            <section>
+                <p>
+                    Multimedia in HTML refers to the integration of audio, video, and other interactive content into web pages, enhancing user engagement and providing richer experiences. HTML provides dedicated elements like <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> to embed multimedia content directly into web pages without relying on third-party plugins. </p>
+            </section>
+
+            <section id="audio">
+                <h2>4.1. Audio</h2>
+                <div class="code-demo">
+                    <div class="code">
+                    <pre style="text-align: left;">
+&lt;figure&gt;
+    &lt;audio controls src&#x3D;&quot;audio.mp3&quot;&gt;&lt;&#x2F;audio&gt;
+    &lt;figcaption&gt;Listen here&lt;&#x2F;figcaption&gt;&lt;span&gt; or &lt;&#x2F;span&gt;&lt;a href&#x3D;&quot;..&#x2F;assets&#x2F;misc&#x2F;audio&#x2F;audio.mp3&quot;&gt;Download&lt;&#x2F;a&gt;
+&lt;&#x2F;figure&gt;
+                     </pre>
+                    </div>
+                    <div class="preview" style="padding-block: 20px;">
+                        <figure>
+                            <audio controls src="../../../assets/misc/audio/audio.mp3"></audio>
+                            <figcaption>Listen here</figcaption><span> or </span><a href="../../../assets/misc/audio/audio.mp3">Download</a>
+                    
+                        </figure>
+                    </div>
+                </div>
+
+<p>The <code>&lt;audio&gt;</code> element is used to embed sound files, such as music or podcasts, and supports attributes like <code>controls</code> (to display play/pause buttons), <code>autoplay</code>, <code>loop</code>, and <code>muted</code>.</p>
+            </section>
+
+            <section id="video">
+                <h2>4.2. Video</h2>
+                <div class="code-demo">
+                    <div class="code">
+                    <pre style="text-align: left;">
+&lt;video controls width&#x3D;&quot;400&quot;&gt;
+    &lt;source src&#x3D;&quot;video.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;
+&lt;&#x2F;video&gt;
+
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <video controls width="400">
+                            <source src="../../../assets/misc/video/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+<p>the <code>&lt;video&gt;</code> element is used to embed video files and supports additional attributes like <code>width</code>, <code>height</code>, <code>poster</code> (for a preview image), and <code>preload</code>.</p>
+            </section>
+
+<section>
+    <p>Both elements allow multiple sources to be specified using the <code>&lt;source&gt;</code> tag, enabling support for different file formats (e.g., MP3, OGG, WAV for audio; MP4, WebM, OGG for video) to ensure compatibility across browsers. Additionally, the <code>&lt;track&gt;</code> element can be used with <code>&lt;video&gt;</code> to provide subtitles or captions, improving accessibility. HTML5 multimedia elements are highly customizable and can be controlled using JavaScript for advanced functionality, such as creating custom media players.</p>
+</section>
+        </div>
+       <div class="lesson-outline">
+           <aside>
+            <p class="outline-title">outline</p>
+               <ol>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#video">Video</a></li>
+               </ol>
+           </aside>
+       </div>
+
+     </div>
+
+</body>
+
+</html>

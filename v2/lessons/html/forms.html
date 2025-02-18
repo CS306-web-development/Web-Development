@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/global.css">
+    <title>CS306: Web Forms</title>
+</head>
+
+<body>
+    <div>
+        <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    </div>
+    <div class="lesson-header wrapper">
+        <div class="lesson-title">
+            <h1>5. Web Forms</h1>
+        </div>
+        <div class="lesson-navigate-back">
+            <a href="../../index.html">
+                <span class="navigate-back-sign">˿</span>
+                Back to homepage</a>
+        </div>
+    </div>
+    <div class="lesson-container">
+        <div class="lesson-content wrapper">
+            <section>
+                <p>
+                    Web forms in HTML are essential for collecting user input, such as text, selections, or file
+                    uploads, and are created using the <code>&lt;form&gt;</code> element. Inside a form, various input
+                    elements like <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>,
+                    <code>&lt;select&gt;</code>, and <code>&lt;button&gt;</code> are used to define fields for user
+                    interaction.
+                </p>
+            </section>
+            <section id="inputs">
+                <h2>5.1. Web form structure basics</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre style="text-align: left;">
+&lt;form&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;&#x2F;legend&gt;
+    &lt;label for&#x3D;&quot;fullName&quot;&gt;Full Name&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;fullName&quot; name&#x3D;&quot;fullName&quot; placeholder&#x3D;&quot;John Doe&quot; required&gt;
+    &lt;br&gt;
+    &lt;label for&#x3D;&quot;email&quot;&gt;Email Address&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; placeholder&#x3D;&quot;john.doe@gmail.com&quot; autocomplete&#x3D;&quot;off&quot;&gt; &lt;br&gt;
+    &lt;label for&#x3D;&quot;dob&quot;&gt;Date of Birth&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;dob&quot; id&#x3D;&quot;DOB&quot;&gt;
+    &lt;br&gt;
+    &lt;label for&#x3D;&quot;gender&quot;&gt;Gender&lt;&#x2F;label&gt;
+    &lt;select name&#x3D;&quot;gender&quot; id&#x3D;&quot;gender&quot;&gt;
+        &lt;option value&#x3D;&quot;&quot; disabled&gt;Select Gender&lt;&#x2F;option&gt;
+        &lt;option value&#x3D;&quot;m&quot;&gt;Male&lt;&#x2F;option&gt;
+        &lt;option value&#x3D;&quot;f&quot;&gt;Female&lt;&#x2F;option&gt;
+    &lt;&#x2F;select&gt;
+    &lt;br&gt;
+    &lt;label for&#x3D;&quot;employment&quot;&gt;Employed?&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;employment&quot; id&#x3D;&quot;employment&quot; value&#x3D;&quot;isEmployed&quot;&gt; Yes
+    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;employment&quot; id&#x3D;&quot;employment&quot; value&#x3D;&quot;isNotEmployed&quot;&gt; No
+&lt;&#x2F;fieldset&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Payment&lt;&#x2F;legend&gt;
+    &lt;label for&#x3D;&quot;cardNo&quot;&gt;Account Number &lt;span&gt;&lt;abbr title&#x3D;&quot;(16-digit number on your card)&quot;&gt;?&lt;&#x2F;abbr&gt;&lt;&#x2F;span&gt; &lt;&#x2F;label&gt;
+    &lt;input maxlength&#x3D;&quot;16&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;cardNo&quot; id&#x3D;&quot;cardNo&quot; pattern&#x3D;&quot;^(?:\0-9[ -]*?){13,16}$&quot; required&gt;
+    &lt;label for&#x3D;&quot;otp&quot;&gt;Enter OTP&lt;&#x2F;label&gt;
+    &lt;input minlength&#x3D;&quot;6&quot; maxlength&#x3D;&quot;10&quot; type&#x3D;&quot;password&quot;&gt;
+&lt;&#x2F;fieldset&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Feedback&lt;&#x2F;legend&gt;
+    &lt;label  for&#x3D;&quot;recommendation&quot;&gt;To what extent would you recommend our service to your friends? &lt;&#x2F;label&gt;
+    0 &lt;input min&#x3D;&quot;0&quot; max&#x3D;&quot;10&quot; type&#x3D;&quot;range&quot; name&#x3D;&quot;recommendation&quot; id&#x3D;&quot;recommendation&quot;&gt; 10
+    &lt;br&gt;
+    &lt;label for&#x3D;&quot;detailedFeedback&quot;&gt;Your Feedback in details&lt;&#x2F;label&gt;
+    &lt;br&gt;
+    &lt;textarea id&#x3D;&quot;detailedFeedback&quot; name&#x3D;&quot;detailedFeedback&quot; cols&#x3D;&quot;50&quot; rows&#x3D;&quot;6&quot; &gt;&lt;&#x2F;textarea&gt;
+    &lt;hr&gt;
+    &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;consent&quot; id&#x3D;&quot;consent&quot; value&#x3D;&quot;consentAware&quot;&gt; 
+    &lt;label for&#x3D;&quot;consentAware&quot;&gt;I am aware that my feedback could be published and used for commercial purposes&lt;&#x2F;label&gt;
+&lt;&#x2F;fieldset&gt;
+
+&lt;button type&#x3D;&quot;submit&quot;&gt;Submit&lt;&#x2F;button&gt;
+&lt;button type&#x3D;&quot;reset&quot;&gt;Reset&lt;&#x2F;button&gt;
+&lt;&#x2F;form&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <form>
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                                <br>
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john.doe@gmail.com"
+                                    autocomplete="off"> <br>
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" name="dob" id="DOB">
+                                <br>
+                                <label for="gender">Gender</label>
+                                <select name="gender" id="gender">
+                                    <option value="" disabled>Select Gender</option>
+                                    <option value="m">Male</option>
+                                    <option value="f">Female</option>
+                                </select>
+                                <br>
+                                <label for="employment">Employed?</label>
+                                <input type="radio" name="employment" id="employment" value="isEmployed"> Yes
+                                <input type="radio" name="employment" id="employment" value="isNotEmployed"> No
+                            </fieldset>
+                            <fieldset>
+                                <legend>Payment</legend>
+                                <label for="cardNo">Card Number <span><abbr
+                                            title="(16-digit number on your card)">?</abbr></span>
+                                </label>
+                                <input maxlength="16" type="text" name="cardNo" id="cardNo" required> <br>
+                                <label for="otp">Enter OTP</label>
+                                <input minlength="6" maxlength="10" type="password">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Feedback</legend>
+                                <label for="recommendation">To what extent would you recommend our service to your
+                                    friends? </label>
+                                0 <input min="0" max="10" type="range" name="recommendation" id="recommendation"> 10
+                                <br>
+                                <label for="detailedFeedback">Your Feedback in details</label>
+                                <br>
+                                <textarea id="detailedFeedback" name="detailedFeedback" cols="50" rows="6"></textarea>
+                                <hr>
+                                <input type="checkbox" name="consent" id="consent" value="consentAware">
+                                <label for="consentAware">I am aware that my feedback could be published and used for
+                                    commercial
+                                    purposes</label>
+                            </fieldset>
+
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </form>
+                    </div>
+                </div>
+                <p>
+                    The structure of a web form in HTML is built around the <code>&lt;form&gt;</code> element, which
+                    acts as a container for all input fields and controls. Inside the <code>&lt;form&gt;</code>,
+                    elements like <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>,
+                    <code>&lt;select&gt;</code>, and <code>&lt;button&gt;</code> are used to create interactive fields
+                    for user input. The <code>&lt;input&gt;</code> element is the most versatile, supporting various
+                    types such as <code>text</code>, <code>email</code>, <code>password</code>, and
+                    <code>checkbox</code>, while <code>&lt;textarea&gt;</code> allows for multi-line text input.
+                    Dropdown menus are created using the <code>&lt;select&gt;</code> element with
+                    <code>&lt;option&gt;</code> tags for each choice. Labels for form fields are provided using the
+                    <code>&lt;label&gt;</code> element, which improves accessibility by associating text with its
+                    corresponding input. Buttons, such as <code>&lt;button&gt;</code> or
+                    <code>&lt;input type="submit"&gt;</code>, are used to submit or reset the form. Attributes like
+                    <code>name</code>, <code>placeholder</code>, <code>required</code>, and <code>autocomplete</code>
+                    enhance functionality and user experience. Proper structuring of web forms ensures clarity,
+                    accessibility, and efficient data collection.
+                </p>
+
+            </section>
+
+            <section id="patterns">
+                <h2>5.2. Pattern Matching</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre style="text-align: left;">
+&lt;form&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Payment Information&lt;&#x2F;legend&gt;
+    &lt;div&gt;
+        &lt;label for&#x3D;&quot;cardNo&quot;&gt;Card Number &lt;span&gt;&lt;abbr title&#x3D;&quot;(16-digit number on your card)&quot;&gt;?&lt;&#x2F;abbr&gt;&lt;&#x2F;span&gt;
+        &lt;&#x2F;label&gt;
+    &lt;input 
+    maxlength="16" 
+    type="text" 
+    name="cardNo" 
+    pattern="\d{16}" 
+    id="cardNo"
+    placeholder="1234 5678 9012 3456" 
+    required&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div&gt;
+        &lt;label for&#x3D;&quot;expiration&quot;&gt;Expiration Date&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;expiration&quot; name&#x3D;&quot;expiration&quot; pattern&#x3D;&quot;^(0[1-9]|1[0-2])\&#x2F;([0-9]{2})$&quot; placeholder&#x3D;&quot;mm&#x2F;yy&quot; required&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;fieldset&gt;
+&lt;button type&#x3D;&quot;submit&quot;&gt;Submit&lt;&#x2F;button&gt;
+&lt;button type&#x3D;&quot;reset&quot;&gt;Reset&lt;&#x2F;button&gt;
+&lt;&#x2F;form&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <form>
+                            <fieldset>
+                                <legend>Payment Information</legend>
+                                <div>
+                                    <label for="cardNo">Card Number <span><abbr
+                                                title="(16-digit number on your card)">?</abbr></span>
+                                    </label>
+                                    <input maxlength="16" type="text" name="cardNo" pattern="\d{16}" id="cardNo"
+                                        placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div>
+                                    <label for="expiration">Expiration Date</label>
+                                    <input type="text" id="expiration" name="expiration"
+                                        pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" placeholder="mm/yy" required>
+                                </div>
+                            </fieldset>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </form>
+
+                    </div>
+                </div>
+                <p>
+                    Pattern matching in web forms is a powerful feature of HTML that allows developers to enforce
+                    specific formats for user input using regular expressions (regex). The <code>pattern</code>
+                    attribute, used with <code>&lt;input&gt;</code> elements, defines a regex pattern that the input
+                    value must match for the form to be submitted. This is particularly useful for validating data like
+                    phone numbers, email addresses, credit card numbers, or dates. For example, a pattern like
+                    <code>\d{16}</code> ensures a 16-digit card number, while <code>^(0[1-9]|1[0-2])\/([0-9]{2})$</code>
+                    validates an expiration date in <code>MM/YY</code> format. When the input doesn’t match the pattern,
+                    the browser displays a validation error, improving data accuracy and user experience. Pattern
+                    matching is especially valuable for client-side validation, reducing the need for additional
+                    JavaScript or server-side checks. However, it should be complemented with server-side validation for
+                    security, as client-side validation can be bypassed. Proper use of pattern matching ensures that web
+                    forms collect clean, structured, and valid data.
+                </p>
+
+            </section>
+
+            <section id="methods">
+                <h2>5.3. <code>GET</code> and <code>POST</code> methods</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre style="text-align: left;">
+&lt;form method&#x3D;&quot;POST&quot;&gt;
+&lt;h2&gt;Sign In&lt;&#x2F;h2&gt;
+&lt;p&gt;
+    &lt;label for&#x3D;&quot;username&quot;&gt;username&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot; id&#x3D;&quot;username&quot; placeholder&#x3D;&quot;Enter Username&quot; required&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;
+    &lt;label for&#x3D;&quot;password&quot;&gt;password&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Enter Password&quot; required&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;
+    &lt;button&gt;Login&lt;&#x2F;button&gt;
+&lt;&#x2F;p&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;rememberMe&quot; id&#x3D;&quot;rememberMe&quot;&gt;
+&lt;label for&#x3D;&quot;rememberMe&quot;&gt;Remember Me&lt;&#x2F;label&gt;
+&lt;p&gt;Don&#39;t have an account? &lt;a href&#x3D;&quot;#&quot;&gt;Create Account&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;form&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <form method="POST">
+                            <h2>Sign In</h2>
+                            <p>
+                                <label for="username">username</label>
+                                <input type="text" name="username" id="username" placeholder="Enter Username" required>
+                            </p>
+                            <p>
+                                <label for="password">password</label>
+                                <input type="password" name="password" id="password" placeholder="Enter Password"
+                                    required>
+                            </p>
+                            <p>
+                                <button type="submit">Login</button>
+                            </p>
+                            <input type="checkbox" name="rememberMe" id="rememberMe">
+                            <label for="rememberMe">Remember Me</label>
+                            <p>Don't have an account? <a href="#">Create Account</a></p>
+                        </form>
+
+                    </div>
+                </div>
+
+                <p>
+                    Web form submission methods in HTML determine how data is sent from the client to the server. The two primary methods are <code>GET</code> and <code>POST</code>, specified using the <code>method</code> attribute in the <code>&lt;form&gt;</code> element. The <code>GET</code> method appends form data to the URL as query parameters, making it visible in the browser's address bar. This method is suitable for non-sensitive data, such as search queries, where bookmarking or sharing the URL is useful. On the other hand, the <code>POST</code> method sends form data in the body of the HTTP request, keeping it hidden from the URL. This method is ideal for sensitive or large amounts of data, such as login credentials or file uploads. The <code>action</code> attribute in the <code>&lt;form&gt;</code> element specifies the URL where the data is sent for processing. </p>
+            </section>
+
+            <section id="action">
+                <h2>5.4. Form <code>action</code> attribute</h2>
+                <div class="code-demo">
+                    <div class="code">
+                    <pre style="text-align: left;">
+&lt;form action&#x3D;&quot;welcome.html&quot;&gt;
+&lt;h2&gt;Sign In&lt;&#x2F;h2&gt;
+&lt;p&gt;
+    &lt;label for&#x3D;&quot;user&quot;&gt;username&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;user&quot; id&#x3D;&quot;user&quot; placeholder&#x3D;&quot;Enter Username&quot; required&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;
+    &lt;label for&#x3D;&quot;pass&quot;&gt;password&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; id&#x3D;&quot;pass&quot; placeholder&#x3D;&quot;Enter Password&quot; required&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;
+    &lt;button&gt;Login&lt;&#x2F;button&gt;
+&lt;&#x2F;p&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;rememberMe&quot; id&#x3D;&quot;remMe&quot;&gt;
+&lt;label for&#x3D;&quot;remMe&quot;&gt;Remember Me&lt;&#x2F;label&gt;
+&lt;p&gt;Don&#39;t have an account? &lt;a href&#x3D;&quot;#&quot;&gt;Create Account&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;form&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <form action="welcome.html">
+                            <h2>Sign In</h2>
+                            <p>
+                                <label for="user">username</label>
+                                <input type="text" name="user" id="user" placeholder="Enter Username" required>
+                            </p>
+                            <p>
+                                <label for="pass">password</label>
+                                <input type="password" name="password" id="pass" placeholder="Enter Password" required>
+                            </p>
+                            <p>
+                                <button>Login</button>
+                            </p>
+                            <input type="checkbox" name="rememberMe" id="remMe">
+                            <label for="remMe">Remember Me</label>
+                            <p>Don't have an account? <a href="#">Create Account</a></p>
+                        </form>
+                    
+                    </div>
+                </div>
+                <p>
+                    The <code>action</code> attribute in an HTML form specifies the URL where the form data is sent when the form is submitted. This URL can point to a server-side script (e.g., PHP, Node.js, Python) or a static page that processes the data. The <code>action</code> attribute works in conjunction with the <code>method</code> attribute, which defines how the data is sent (e.g., <code>GET</code> or <code>POST</code>). For example, <code>action="submit.php"</code> sends the form data to a PHP script for processing, while <code>action="/submit"</code> might route the data to a server endpoint. If the <code>action</code> attribute is omitted, the form submits to the current page by default. </p>
+
+            </section>
+        </div>
+        <div class="lesson-outline">
+            <aside>
+                <p class="outline-title">outline</p>
+                <ol>
+                    <li><a href="#inputs">Web form structure basics</a></li>
+                    <li><a href="#patterns">Pattern Matching</a></li>
+                    <li><a href="#methods"><code>GET</code> and <code>POST</code> methods</a></li>
+                    <li><a href="#action">Form <code>action</code> attribute</a></li>
+                </ol>
+            </aside>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

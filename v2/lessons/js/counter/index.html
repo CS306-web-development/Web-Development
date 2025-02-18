@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Radio Canada Big', sans-serif;
+    }
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    body {
+        background-color:thistle
+    }
+    .container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .counterWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .counterDisplayWrapper {
+        font-size: 20rem;
+        padding-inline: 10rem;
+        max-width: max-content;
+    }
+
+
+    .btn {
+        font-size: 3rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn.decrementBtn:hover {
+        color: red;
+    }
+
+    .btn.incrementBtn:hover {
+        color: green;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <h1>counter</h1>
+            <div class="counterWrapper">
+                <div class="decrementerWrapper"><button name="decrement" class="btn decrementBtn">-</button></div>
+                <div class="counterDisplayWrapper">
+                    <p class="counterDisplay">0</p>
+                </div>
+                <div class="incrementerWrapper"><button name="increment" class="btn incrementBtn">+</button></div>
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

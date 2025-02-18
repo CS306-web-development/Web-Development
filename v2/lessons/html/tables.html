@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/global.css">
+    <title>CS306: Tables</title>
+</head>
+
+<body>
+    <div>
+        <marquee direction="right">CS306 - Web Programming: HTML</marquee>
+    </div>
+    <div class="lesson-header wrapper">
+        <div class="lesson-title">
+            <h1>2. HTML Tables</h1>
+        </div>
+        <div class="lesson-navigate-back">
+            <a href="../../index.html">
+                <span class="navigate-back-sign">˿</span>
+                Back to homepage</a>
+        </div>
+    </div>
+    <div class="lesson-container">
+        <div class="lesson-content wrapper">
+            <section>
+                <p>
+                <p>
+                    HTML tables are used to display data in a structured, grid-like format. They are created using the
+                    <code>&lt;table&gt;</code> element, with rows defined by <code>&lt;tr&gt;</code> (table row),
+                    headers by <code>&lt;th&gt;</code> (table header), and data cells by <code>&lt;td&gt;</code> (table
+                    data). Tables are useful for organizing information like schedules, pricing, or comparisons, making
+                    it easy for users to read and understand complex data. Proper use of tables improves both the
+                    presentation and accessibility of content on a webpage.
+                </p>
+                </p>
+            </section>
+            <section id="simpleTable">
+                <h2>2.1. Creating a simple table</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre>
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;th&gt;#&lt;&#x2F;th&gt;
+    &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+    &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+    &lt;th&gt;DOB&lt;&#x2F;th&gt;
+    &lt;th&gt;Department&lt;&#x2F;th&gt;
+    &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;1&lt;&#x2F;td&gt;
+    &lt;td&gt;1234&lt;&#x2F;td&gt;
+    &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+    &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;2&lt;&#x2F;td&gt;
+    &lt;td&gt;1235&lt;&#x2F;td&gt;
+    &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+    &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;    &lt;tr&gt;
+    &lt;td&gt;3&lt;&#x2F;td&gt;
+    &lt;td&gt;1236&lt;&#x2F;td&gt;
+    &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+    &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;4&lt;&#x2F;td&gt;
+    &lt;td&gt;1237&lt;&#x2F;td&gt;
+    &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+    &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;5&lt;&#x2F;td&gt;
+    &lt;td&gt;1238&lt;&#x2F;td&gt;
+    &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+    &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;table&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <table style="text-align: center;">
+                            <tr>
+                                <th>#</th>
+                                <th>Emp. Code</th>
+                                <th>Emp. Name</th>
+                                <th>DOB</th>
+                                <th>Department</th>
+                                <th>Remotely</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1234</td>
+                                <td>John Doe</td>
+                                <td>19/10/1985</td>
+                                <td>IT</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1235</td>
+                                <td>Emily Clark</td>
+                                <td>10/9/1987</td>
+                                <td>IT</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>1236</td>
+                                <td>Sam Smith</td>
+                                <td>1/12/1990</td>
+                                <td>IT</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>1237</td>
+                                <td>Alan Johnson</td>
+                                <td>7/11/2001</td>
+                                <td>IT</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>1238</td>
+                                <td>Sarah Walker</td>
+                                <td>15/1/1991</td>
+                                <td>IT</td>
+                                <td>No</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="borderedTable">
+                <h2>2.2. Creating a bordered table</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre>
+&lt;table border&#x3D;&quot;1&quot;&gt;
+&lt;tr&gt;
+    &lt;th&gt;#&lt;&#x2F;th&gt;
+    &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+    &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+    &lt;th&gt;DOB&lt;&#x2F;th&gt;
+    &lt;th&gt;Department&lt;&#x2F;th&gt;
+    &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;1&lt;&#x2F;td&gt;
+    &lt;td&gt;1234&lt;&#x2F;td&gt;
+    &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+    &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;2&lt;&#x2F;td&gt;
+    &lt;td&gt;1235&lt;&#x2F;td&gt;
+    &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+    &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;    &lt;tr&gt;
+    &lt;td&gt;3&lt;&#x2F;td&gt;
+    &lt;td&gt;1236&lt;&#x2F;td&gt;
+    &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+    &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;4&lt;&#x2F;td&gt;
+    &lt;td&gt;1237&lt;&#x2F;td&gt;
+    &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+    &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;5&lt;&#x2F;td&gt;
+    &lt;td&gt;1238&lt;&#x2F;td&gt;
+    &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+    &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+    &lt;td&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;table&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <table border="1">
+                            <tr>
+                                <th>#</th>
+                                <th>Emp. Code</th>
+                                <th>Emp. Name</th>
+                                <th>DOB</th>
+                                <th>Department</th>
+                                <th>Remotely</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1234</td>
+                                <td>John Doe</td>
+                                <td>19/10/1985</td>
+                                <td>IT</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1235</td>
+                                <td>Emily Clark</td>
+                                <td>10/9/1987</td>
+                                <td>IT</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>1236</td>
+                                <td>Sam Smith</td>
+                                <td>1/12/1990</td>
+                                <td>IT</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>1237</td>
+                                <td>Alan Johnson</td>
+                                <td>7/11/2001</td>
+                                <td>IT</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>1238</td>
+                                <td>Sarah Walker</td>
+                                <td>15/1/1991</td>
+                                <td>IT</td>
+                                <td>No</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p>
+                    The <code>border</code> attribute in the <code>&lt;table&gt;</code> element is used to define the
+                    width of the border around the table and its cells. By default, tables are displayed without
+                    borders, but adding the <code>border</code> attribute with a numeric value (e.g.,
+                    <code>border="1"</code>) creates a visible border around the table and its cells. While the
+                    <code>border</code> attribute is simple to use, it is considered outdated in modern HTML. Instead,
+                    CSS is recommended for styling tables, as it provides more control over border appearance, such as
+                    color, thickness, and style. Using CSS ensures better design consistency and adherence to modern web
+                    standards.
+                </p>
+            </section>
+
+            <section id="tableStructure">
+                <h2>2.3. <code>thead</code>,<code>tbody</code> and <code>tfoot</code></h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre>
+&lt;table border&#x3D;&quot;1&quot;&gt;
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;#&lt;&#x2F;th&gt;
+        &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+        &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+        &lt;th&gt;DOB&lt;&#x2F;th&gt;
+        &lt;th&gt;Department&lt;&#x2F;th&gt;
+        &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+        &lt;th&gt;Salary&lt;&#x2F;th&gt;
+    &lt;&#x2F;tr&gt;
+&lt;&#x2F;thead&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1&lt;&#x2F;td&gt;
+        &lt;td&gt;1234&lt;&#x2F;td&gt;
+        &lt;td&gt;John Doe&lt;&#x2F;td&gt;
+        &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+        &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2&lt;&#x2F;td&gt;
+        &lt;td&gt;1235&lt;&#x2F;td&gt;
+        &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+        &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+        &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;    &lt;tr&gt;
+        &lt;td&gt;3&lt;&#x2F;td&gt;
+        &lt;td&gt;1236&lt;&#x2F;td&gt;
+        &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+        &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+        &lt;td&gt;Yes&lt;&#x2F;td&gt;
+        &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;4&lt;&#x2F;td&gt;
+        &lt;td&gt;1237&lt;&#x2F;td&gt;
+        &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+        &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+        &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;5&lt;&#x2F;td&gt;
+        &lt;td&gt;1238&lt;&#x2F;td&gt;
+        &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+        &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+        &lt;td&gt;IT&lt;&#x2F;td&gt;
+        &lt;td&gt;No&lt;&#x2F;td&gt;
+        &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+
+&lt;&#x2F;tbody&gt;
+&lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Total&lt;&#x2F;td&gt;
+        &lt;td&gt;&lt;&#x2F;td&gt;
+        &lt;td&gt;&lt;&#x2F;td&gt;
+        &lt;td&gt;&lt;&#x2F;td&gt;
+        &lt;td&gt;&lt;&#x2F;td&gt;
+        &lt;td&gt;&lt;&#x2F;td&gt;
+        &lt;td&gt;$750,000&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+
+&lt;&#x2F;tfoot&gt;
+&lt;&#x2F;table&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Emp. Code</th>
+                                    <th>Emp. Name</th>
+                                    <th>DOB</th>
+                                    <th>Department</th>
+                                    <th>Remotely</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1234</td>
+                                    <td>John Doe</td>
+                                    <td>19/10/1985</td>
+                                    <td>IT</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>1235</td>
+                                    <td>Emily Clark</td>
+                                    <td>10/9/1987</td>
+                                    <td>IT</td>
+                                    <td>Yes</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>1236</td>
+                                    <td>Sam Smith</td>
+                                    <td>1/12/1990</td>
+                                    <td>IT</td>
+                                    <td>Yes</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>1237</td>
+                                    <td>Alan Johnson</td>
+                                    <td>7/11/2001</td>
+                                    <td>IT</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>1238</td>
+                                    <td>Sarah Walker</td>
+                                    <td>15/1/1991</td>
+                                    <td>IT</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Total</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>$750,000</td>
+                                </tr>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    The <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> elements
+                    in HTML are used to semantically structure the content of a table. The <code>&lt;thead&gt;</code>
+                    element defines the header section of a table, typically containing column labels wrapped in
+                    <code>&lt;th&gt;</code> tags. The <code>&lt;tbody&gt;</code> element represents the main content of
+                    the table, where data rows are placed using <code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code>
+                    tags. The <code>&lt;tfoot&gt;</code> element is used for the footer section, often summarizing or
+                    providing additional information about the table data. These elements improve accessibility, enable
+                    better styling with CSS, and allow browsers to render tables more efficiently, especially for large
+                    datasets. Proper use of <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and
+                    <code>&lt;tfoot&gt;</code> ensures a well-organized and meaningful table structure.
+                </p>
+            </section>
+
+            <section id="spanningRows&Cols">
+                <h2>2.4. Spanning mutiple rows and columns</h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre>
+&lt;table border&#x3D;&quot;1&quot;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+    &lt;th&gt;#&lt;&#x2F;th&gt;
+    &lt;th&gt;Emp. Code&lt;&#x2F;th&gt;
+    &lt;th&gt;Emp. Name&lt;&#x2F;th&gt;
+    &lt;th&gt;DOB&lt;&#x2F;th&gt;
+    &lt;th&gt;Department&lt;&#x2F;th&gt;
+    &lt;th&gt;Remotely&lt;&#x2F;th&gt;
+    &lt;th&gt;Salary&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+    &lt;td&gt;1&lt;&#x2F;td&gt;
+    &lt;td&gt;1234&lt;&#x2F;td&gt;
+    &lt;td &gt;John Doe&lt;&#x2F;td&gt;
+    &lt;td&gt;19&#x2F;10&#x2F;1985&lt;&#x2F;td&gt;
+    &lt;td rowspan&#x3D;&quot;5&quot;&gt;IT&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+    &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;2&lt;&#x2F;td&gt;
+    &lt;td&gt;1235&lt;&#x2F;td&gt;
+    &lt;td&gt;Emily Clark&lt;&#x2F;td&gt;
+    &lt;td&gt;10&#x2F;9&#x2F;1987&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+    &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;    &lt;tr&gt;
+    &lt;td&gt;3&lt;&#x2F;td&gt;
+    &lt;td&gt;1236&lt;&#x2F;td&gt;
+    &lt;td&gt;Sam Smith&lt;&#x2F;td&gt;
+    &lt;td&gt;1&#x2F;12&#x2F;1990&lt;&#x2F;td&gt;
+    &lt;td&gt;Yes&lt;&#x2F;td&gt;
+    &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;4&lt;&#x2F;td&gt;
+    &lt;td&gt;1237&lt;&#x2F;td&gt;
+    &lt;td&gt;Alan Johnson&lt;&#x2F;td&gt;
+    &lt;td&gt;7&#x2F;11&#x2F;2001&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+    &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;5&lt;&#x2F;td&gt;
+    &lt;td&gt;1238&lt;&#x2F;td&gt;
+    &lt;td&gt;Sarah Walker&lt;&#x2F;td&gt;
+    &lt;td&gt;15&#x2F;1&#x2F;1991&lt;&#x2F;td&gt;
+    &lt;td&gt;No&lt;&#x2F;td&gt;
+    &lt;td&gt;$150,000&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+
+&lt;&#x2F;tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+    &lt;td colspan&#x3D;&quot;6&quot;&gt;Total Salary&lt;&#x2F;td&gt;
+    &lt;td &gt;$750,000&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+
+&lt;&#x2F;tfoot&gt;
+&lt;&#x2F;table&gt;
+
+
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Emp. Code</th>
+                                    <th>Emp. Name</th>
+                                    <th>DOB</th>
+                                    <th>Department</th>
+                                    <th>Remotely</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1234</td>
+                                    <td>John Doe</td>
+                                    <td>19/10/1985</td>
+                                    <td rowspan="5">IT</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>1235</td>
+                                    <td>Emily Clark</td>
+                                    <td>10/9/1987</td>
+                                    <td>Yes</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>1236</td>
+                                    <td>Sam Smith</td>
+                                    <td>1/12/1990</td>
+                                    <td>Yes</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>1237</td>
+                                    <td>Alan Johnson</td>
+                                    <td>7/11/2001</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>1238</td>
+                                    <td>Sarah Walker</td>
+                                    <td>15/1/1991</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                    
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">Total Salary</td>
+                                    <td>$750,000</td>
+                                </tr>
+                    
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <p>
+                    In HTML, the <code>colspan</code> and <code>rowspan</code> attributes are used to merge cells in a
+                    table, allowing a single cell to span multiple columns or rows. The <code>colspan</code> attribute
+                    specifies how many columns a cell should span horizontally, while the <code>rowspan</code> attribute
+                    defines how many rows a cell should span vertically. These attributes are applied to
+                    <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code> elements and are useful for creating complex
+                    table layouts, such as headers that span multiple columns or cells that combine data across rows.
+                    Proper use of <code>colspan</code> and <code>rowspan</code> enhances the readability and
+                    organization of tables, making them more effective for presenting structured data. However,
+                    overusing these attributes can make tables harder to maintain and less accessible, so they should be
+                    used thoughtfully.
+                </p>
+
+            </section>
+
+            <section id="col&colgroup">
+                <h2>2.5. <code>col</code> and <code>colgroup</code></h2>
+                <div class="code-demo">
+                    <div class="code">
+                        <pre style="text-align:left;">
+&lt;table border="1" style="text-align:center"&gt;
+&lt;colgroup&gt;
+    &lt;col style="background-color: #f2f2f2"&gt;
+    &lt;col style="background-color: #e6f7ff"&gt;
+    &lt;col style="background-color: #fff3e6"&gt;
+    &lt;col style="background-color: #f9e6ff"&gt;
+    &lt;col style="background-color: #e6ffe6"&gt;
+    &lt;col style="background-color: #ffe6e6"&gt;
+    &lt;col style="background-color: #e6e6ff"&gt;
+&lt;/colgroup&gt;
+
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;Emp. Code&lt;/th&gt;
+        &lt;th&gt;Emp. Name&lt;/th&gt;
+        &lt;th&gt;DOB&lt;/th&gt;
+        &lt;th&gt;Department&lt;/th&gt;
+        &lt;th&gt;Remotely&lt;/th&gt;
+        &lt;th&gt;Salary&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;1234&lt;/td&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;19/10/1985&lt;/td&gt;
+        &lt;td rowspan="5"&gt;IT&lt;/td&gt;
+        &lt;td&gt;No&lt;/td&gt;
+        &lt;td&gt;$150,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;1235&lt;/td&gt;
+        &lt;td&gt;Emily Clark&lt;/td&gt;
+        &lt;td&gt;10/9/1987&lt;/td&gt;
+        &lt;td&gt;Yes&lt;/td&gt;
+        &lt;td&gt;$150,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;1236&lt;/td&gt;
+        &lt;td&gt;Sam Smith&lt;/td&gt;
+        &lt;td&gt;1/12/1990&lt;/td&gt;
+        &lt;td&gt;Yes&lt;/td&gt;
+        &lt;td&gt;$150,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;4&lt;/td&gt;
+        &lt;td&gt;1237&lt;/td&gt;
+        &lt;td&gt;Alan Johnson&lt;/td&gt;
+        &lt;td&gt;7/11/2001&lt;/td&gt;
+        &lt;td&gt;No&lt;/td&gt;
+        &lt;td&gt;$150,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;5&lt;/td&gt;
+        &lt;td&gt;1238&lt;/td&gt;
+        &lt;td&gt;Sarah Walker&lt;/td&gt;
+        &lt;td&gt;15/1/1991&lt;/td&gt;
+        &lt;td&gt;No&lt;/td&gt;
+        &lt;td&gt;$150,000&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;td colspan="6"&gt;Total Salary&lt;/td&gt;
+        &lt;td&gt;$750,000&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+                     </pre>
+                    </div>
+                    <div class="preview">
+                        <table border="1" style="text-align:center">
+                            <!-- Column group for styling -->
+                            <colgroup>
+                                <col style="background-color: #f2f2f2"> <!-- First column -->
+                                <col style="background-color: #e6f7ff"> <!-- Second column -->
+                                <col style="background-color: #fff3e6"> <!-- Third column -->
+                                <col style="background-color: #f9e6ff"> <!-- Fourth column -->
+                                <col style="background-color: #e6ffe6"> <!-- Fifth column -->
+                                <col style="background-color: #ffe6e6"> <!-- Sixth column -->
+                                <col style="background-color: #e6e6ff"> <!-- Seventh column -->
+                            </colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Emp. Code</th>
+                                    <th>Emp. Name</th>
+                                    <th>DOB</th>
+                                    <th>Department</th>
+                                    <th>Remotely</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1234</td>
+                                    <td>John Doe</td>
+                                    <td>19/10/1985</td>
+                                    <td rowspan="5">IT</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>1235</td>
+                                    <td>Emily Clark</td>
+                                    <td>10/9/1987</td>
+                                    <td>Yes</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>1236</td>
+                                    <td>Sam Smith</td>
+                                    <td>1/12/1990</td>
+                                    <td>Yes</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>1237</td>
+                                    <td>Alan Johnson</td>
+                                    <td>7/11/2001</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>1238</td>
+                                    <td>Sarah Walker</td>
+                                    <td>15/1/1991</td>
+                                    <td>No</td>
+                                    <td>$150,000</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">Total Salary</td>
+                                    <td>$750,000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+
+                <p>
+                    The <code>&lt;col&gt;</code> and <code>&lt;colgroup&gt;</code> elements in HTML are used to apply styles or attributes to columns in a table. The <code>&lt;colgroup&gt;</code> element groups one or more <code>&lt;col&gt;</code> elements, which represent individual columns. These elements allow you to style entire columns without repeating styles for each cell. For example, you can set background colors, widths, or alignment for specific columns. The <code>&lt;colgroup&gt;</code> and <code>&lt;col&gt;</code> elements are placed inside the <code>&lt;table&gt;</code> tag, before the table content. While they don’t change the structure of the table, they make it easier to manage column-specific styling and improve maintainability.
+                </p>
+            </section>
+        </div>
+        <div class="lesson-outline">
+            <aside>
+                <p class="outline-title">outline</p>
+                <ol>
+                    <li><a href="#simpleTable">Creating a simple table</a></li>
+                    <li><a href="#borderedTable">Using <code>border</code> attribute</a></li>
+                    <li><a href="#tableStructure"><code>thead</code>,<code>tbody</code> and <code>tfoot</code></a></li>
+                    <li><a href="#spanningRows&Cols">Spanning mutiple rows and columns</a></li>
+                    <li><a href="#col&colgroup"><code>col</code> and <code>colgroup</code></a></li>
+                </ol>
+            </aside>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
