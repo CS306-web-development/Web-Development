@@ -2,4 +2,4 @@
 This should act as a supplementary resource for the couse, providing material for various topics taught throughout the semester.
 For feedback or suggestions for further improvements, please don't hesitate to submit issues or pull requests!
 
-[\[Visit Course's Website\]()](https://cs306-web-development.github.io/Web-Development/v2)
+[Visit Course's Website](https://cs306-web-development.github.io/Web-Development/v2)
